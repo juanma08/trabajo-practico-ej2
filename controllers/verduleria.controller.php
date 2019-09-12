@@ -1,6 +1,6 @@
 <?php
-include_once('models/veruleria.model.php');
-include_once('models/veruleria.view.php');
+include_once('./models/verduleria.model.php');
+include_once('./views/verduleria.view.php');
 
 class VerduleriaController {
     private $model;
@@ -13,6 +13,6 @@ class VerduleriaController {
     public function showHome(){
         $productos = $this->model->getAll();
 
-        $this->view->showHome($tareas);
+        $this->view->showHome($productos);
     }
 }

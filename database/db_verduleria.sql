@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0.1
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-09-2019 a las 03:29:19
--- Versión del servidor: 10.1.32-MariaDB
--- Versión de PHP: 7.2.5
+-- Tiempo de generación: 12-09-2019 a las 01:23:38
+-- Versión del servidor: 10.1.40-MariaDB
+-- Versión de PHP: 7.3.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,45 +25,49 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `frutas`
+-- Estructura de tabla para la tabla `categorias`
 --
 
-CREATE TABLE `frutas` (
-  `idProducto` int(11) NOT NULL,
-  `Nombre` text,
-  `Precio` int(250) NOT NULL,
-  `Descripcion` text NOT NULL,
-  `Categoria` text NOT NULL
+CREATE TABLE `categorias` (
+  `idCategoria` int(11) NOT NULL,
+  `Nombre` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `verduras`
+-- Estructura de tabla para la tabla `productos`
 --
 
-CREATE TABLE `verduras` (
+CREATE TABLE `productos` (
   `idProducto` int(11) NOT NULL,
-  `Nombre` varchar(50) NOT NULL,
-  `Precio` int(250) NOT NULL,
-  `Descripcion` varchar(400) NOT NULL,
-  `Categoria` varchar(15) NOT NULL
+  `Nombre` varchar(25) NOT NULL,
+  `Precio` int(50) NOT NULL,
+  `Descripcion` varchar(144) NOT NULL,
+  `Categoria` int(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `productos`
+--
+
+INSERT INTO `productos` (`idProducto`, `Nombre`, `Precio`, `Descripcion`, `Categoria`) VALUES
+(1, 'Pomelo', 55, 'Citrico', 0);
 
 --
 -- Índices para tablas volcadas
 --
 
 --
--- Indices de la tabla `frutas`
+-- Indices de la tabla `categorias`
 --
-ALTER TABLE `frutas`
-  ADD PRIMARY KEY (`idProducto`);
+ALTER TABLE `categorias`
+  ADD PRIMARY KEY (`idCategoria`);
 
 --
--- Indices de la tabla `verduras`
+-- Indices de la tabla `productos`
 --
-ALTER TABLE `verduras`
+ALTER TABLE `productos`
   ADD PRIMARY KEY (`idProducto`);
 
 --
@@ -71,16 +75,16 @@ ALTER TABLE `verduras`
 --
 
 --
--- AUTO_INCREMENT de la tabla `frutas`
+-- AUTO_INCREMENT de la tabla `categorias`
 --
-ALTER TABLE `frutas`
-  MODIFY `idProducto` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `categorias`
+  MODIFY `idCategoria` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `verduras`
+-- AUTO_INCREMENT de la tabla `productos`
 --
-ALTER TABLE `verduras`
-  MODIFY `idProducto` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `productos`
+  MODIFY `idProducto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
