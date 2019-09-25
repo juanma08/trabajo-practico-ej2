@@ -14,7 +14,10 @@
             $controller = new VerduleriaController();
             $controller->showHome();
             break;
-        
+        case 'producto':
+            $controller = new VerduleriaController();
+            $controller->showProducto($partesURL[1]);
+            break;
         default:
             # code...
             break;

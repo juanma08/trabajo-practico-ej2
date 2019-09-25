@@ -15,4 +15,11 @@ class VerduleriaController {
 
         $this->view->showHome($productos);
     }
+    public function showProducto($idProducto){
+        $producto = $this->model->get($idProducto);
+        if ($producto)
+            $this->view->showProducto($producto);
+        else
+            $this->view->showError('El producto no existe');
+    }
 }

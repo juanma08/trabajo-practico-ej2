@@ -1,13 +1,18 @@
 <?php
 class VerduleriaModel{
-    private $db;
+    private $db;//declaro variable q va a contener la conexion
     public function __construct(){
         $this->db = new PDO ('mysql:host=localhost;dbname=db_verduleria;charset=utf8', 'root', '');
-
+        //Guardo la conexion en la variable.
     }
-    public function getAll(){
-        $query = $this->db->prepare("SELECT * FROM productos");
+    public function getAll(){//Hago funcion que va a usar el view y el controller para imprimir toda la tabla
+        $query = $this->db->prepare("SELECT productos.Nombre,productos.Precio,productos.Descripcion,productos.idProducto, categorias.Nombre as Categoria FROM productos JOIN categorias ON productos.idCategoria = categorias.idCategoria");
         $query -> execute();
         return $query -> fetchAll(PDO::FETCH_OBJ);
     }
-}
+    public function get($idProducto){
+        $query = $this->db->prepare('SELECT* FROM productos WHERE idProducto = ?');
+        $query->execute(array($idProducto));
+        return $query->fetch(PDO::FETCH_OBJ);
+    }
+ }
