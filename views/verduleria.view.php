@@ -1,13 +1,15 @@
 <?php
-require('libs/Smarty.class.php');
+require_once('libs/Smarty.class.php');
 class VerduleriaView {
+
+    private $smarty;
 
     public function showHome($productos) {
                         
-                        $smarty = new Smarty();
-                        $smarty->assign('titulo',"Lista de productos");
-                        $smarty->assign('productos',$productos);
-                        $smarty->display('templates/productos.tpl');     
+        $smarty = new Smarty();
+        $smarty->assign('titulo',"Lista de productos");
+        $smarty->assign('productos',$productos);
+        $smarty->display('templates/productos.tpl');     
                         
         
     }

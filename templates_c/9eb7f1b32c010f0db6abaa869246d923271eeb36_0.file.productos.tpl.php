@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-09-19 03:58:23
+/* Smarty version 3.1.33, created on 2019-09-25 22:50:54
   from 'C:\xampp\htdocs\WEB-2\trabajo-practico-ej2\templates\productos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d82e0bf48fc08_24412144',
+  'unifunc' => 'content_5d8bd32e03fa42_64289530',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9eb7f1b32c010f0db6abaa869246d923271eeb36' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WEB-2\\trabajo-practico-ej2\\templates\\productos.tpl',
-      1 => 1568858290,
+      1 => 1568858428,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d82e0bf48fc08_24412144 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d8bd32e03fa42_64289530 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,20 +54,15 @@ if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['producto']->value) {
 ?>
         
-		<tr>
-            
-			
-				<td><?php echo $_smarty_tpl->tpl_vars['producto']->value->Nombre;?>
+		<tr>			
+			<td><?php echo $_smarty_tpl->tpl_vars['producto']->value->Nombre;?>
 </td>
-				<td><?php echo $_smarty_tpl->tpl_vars['producto']->value->Precio;?>
+			<td><?php echo $_smarty_tpl->tpl_vars['producto']->value->Precio;?>
 </td>
-				<td><?php echo $_smarty_tpl->tpl_vars['producto']->value->Descripcion;?>
+			<td><?php echo $_smarty_tpl->tpl_vars['producto']->value->Descripcion;?>
 </td>
-				<td><?php echo $_smarty_tpl->tpl_vars['producto']->value->Categoria;?>
-</td>
-
-
-			
+			<td><?php echo $_smarty_tpl->tpl_vars['producto']->value->Categoria;?>
+</td>			
             <td> <small><a href="producto/<?php echo $_smarty_tpl->tpl_vars['producto']->value->idProducto;?>
 ">Ver mas</a></small> </td>
         </tr>
