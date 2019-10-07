@@ -15,4 +15,10 @@ class VerduleriaModel{
         $query->execute(array($idProducto));
         return $query->fetch(PDO::FETCH_OBJ);
     }
+    public function save($nombre, $precio, $descripcion, $categoria){
+        
+        $query = $this->db->prepare('INSERT INTO productos(nombre, precio, descripcion, categoria) VALUES (?,?,?,?)');
+        $query->execute([$nombre, $precio, $descripcion, $categoria]);
+
+    }
  }

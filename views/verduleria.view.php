@@ -4,22 +4,31 @@ class VerduleriaView {
 
     private $smarty;
 
+    public function __construct(){
+        $this->smarty = new Smarty();
+        $this->smarty->assign('basehref', BASE_URL);
+        $this->authHelper = new AuthHelper();
+        $adminName = $this->authHelper->getLoggedAdminName();
+        $this->smarty->assign('adminName', $adminName);
+    }
+
     public function showHome($productos) {
                         
-        $smarty = new Smarty();
-        $smarty->assign('titulo',"Lista de productos");
-        $smarty->assign('productos',$productos);
-        $smarty->display('templates/productos.tpl');     
+        $this->smarty->assign('titulo',"Lista de productos");
+        $this->smarty->assign('productos',$productos);
+        $this->smarty->display('templates/productos.tpl');     
                         
         
     }
     public function showProducto($producto) {
-        $smarty = new Smarty();
-        $smarty->assign('titulo',"Producto");
-        $smarty->assign('producto',$producto);
-        $smarty->display('templates/producto.tpl');     
+        $this->smarty->assign('titulo',"Producto");
+        $this->smarty->assign('producto',$producto);
+        $this->smarty->display('templates/producto.tpl');     
         
-    }   
+    }  
+    public function showError() {
+        echo "<h1>ERROR!</h1>";
+    }
 
 
 
