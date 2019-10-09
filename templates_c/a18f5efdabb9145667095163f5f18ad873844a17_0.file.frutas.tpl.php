@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-10 01:39:11
-  from 'C:\xampp\htdocs\WEB-2\trabajo-practico-ej2\templates\productos.tpl' */
+/* Smarty version 3.1.33, created on 2019-10-10 01:40:13
+  from 'C:\xampp\htdocs\WEB-2\trabajo-practico-ej2\templates\frutas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d9e6f9fbf5881_08821988',
+  'unifunc' => 'content_5d9e6fdd9c6b13_09632358',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '9eb7f1b32c010f0db6abaa869246d923271eeb36' => 
+    'a18f5efdabb9145667095163f5f18ad873844a17' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\WEB-2\\trabajo-practico-ej2\\templates\\productos.tpl',
-      1 => 1570664347,
+      0 => 'C:\\xampp\\htdocs\\WEB-2\\trabajo-practico-ej2\\templates\\frutas.tpl',
+      1 => 1570664409,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5d9e6f9fbf5881_08821988 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d9e6fdd9c6b13_09632358 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     <h1><?php echo $_smarty_tpl->tpl_vars['titulo']->value;?>
@@ -32,7 +32,7 @@ $_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cach
 <table>
     <tr>
         <th>
-         Producto
+         Fruta
         </th>
         <th>
          Precio
@@ -40,25 +40,20 @@ $_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cach
         <th>
          Descripcion
         </th>
-        <th>
-         Categoria
-        </th>
     </tr>
 	<?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['productos']->value, 'producto');
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['frutas']->value, 'fruta');
 if ($_from !== null) {
-foreach ($_from as $_smarty_tpl->tpl_vars['producto']->value) {
+foreach ($_from as $_smarty_tpl->tpl_vars['fruta']->value) {
 ?>
         
 		<tr>			
-			<td><?php echo $_smarty_tpl->tpl_vars['producto']->value->Nombre;?>
+			<td><?php echo $_smarty_tpl->tpl_vars['fruta']->value->Nombre;?>
 </td>
-			<td><?php echo $_smarty_tpl->tpl_vars['producto']->value->Precio;?>
+			<td><?php echo $_smarty_tpl->tpl_vars['fruta']->value->Precio;?>
 </td>
-			<td><?php echo $_smarty_tpl->tpl_vars['producto']->value->Descripcion;?>
-</td>
-			<td><?php echo $_smarty_tpl->tpl_vars['producto']->value->Categoria;?>
-</td>			
+			<td><?php echo $_smarty_tpl->tpl_vars['fruta']->value->Descripcion;?>
+</td>		
             <td> <small><a href="producto/<?php echo $_smarty_tpl->tpl_vars['producto']->value->idProducto;?>
 ">Ver mas</a></small> </td>
             <?php if ($_smarty_tpl->tpl_vars['adminName']->value) {?>

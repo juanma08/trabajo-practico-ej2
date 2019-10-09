@@ -12,6 +12,14 @@ class VerduleriaView {
         $this->smarty->assign('adminName', $adminName);
     }
 
+    public function showFrutas($frutas){
+        
+        $this->smarty->assign('titulo',"Lista de frutas");
+        $this->smarty->assign('frutas',$frutas);
+        $this->smarty->display('templates/frutas.tpl');
+
+    }
+
     public function showHome($productos) {
                         
         $this->smarty->assign('titulo',"Lista de productos");

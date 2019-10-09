@@ -38,6 +38,6 @@ class LoginController {
     }
     public function logout() {
         $this->authHelper->logout();
-        header('Location: ' . LOGIN);
+        header('Location: ' . HOME);
     }
 }

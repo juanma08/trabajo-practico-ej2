@@ -23,14 +23,19 @@ class VerduleriaController {
         else
             $this->view->showError('El producto no existe');
     }
+    public function showFrutas(){
+        $frutas= $this->model->getAllFrutas();
+        $this->view->showFrutas($frutas);
+    }
+
     public function addProducto(){
         $nombre = $_POST['nombre'];
         $precio = $_POST['precio'];
         $descripcion = $_POST['descripcion'];
         $categoria = $_POST['categoria'];
-        $agregar = true;
-        if ($agregar) {
-            var_dump($nombre, $precio);
+
+        if ((!empty($nombre )) && (!empty($precio)) && (!empty($descripcion)) && (!empty($categoria))) {
+            
             $this->model->save($nombre, $precio, $descripcion, $categoria);
             header('Location:' . home);
         }
@@ -38,4 +43,9 @@ class VerduleriaController {
             $this->view->showError("Faltan datos.");
         }
     }   
+    public function deleteProducto($params= null){
+        $idProducto = $params [':ID'];
+        $this->model->delete($idProducto);
+        
+    }
 }

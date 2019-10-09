@@ -4,7 +4,7 @@
 <table>
     <tr>
         <th>
-         Producto
+         Fruta
         </th>
         <th>
          Precio
@@ -12,17 +12,13 @@
         <th>
          Descripcion
         </th>
-        <th>
-         Categoria
-        </th>
     </tr>
-	{foreach $productos as $producto}
+	{foreach $frutas as $fruta}
         
 		<tr>			
-			<td>{$producto->Nombre}</td>
-			<td>{$producto->Precio}</td>
-			<td>{$producto->Descripcion}</td>
-			<td>{$producto->Categoria}</td>			
+			<td>{$fruta->Nombre}</td>
+			<td>{$fruta->Precio}</td>
+			<td>{$fruta->Descripcion}</td>		
             <td> <small><a href="producto/{$producto->idProducto}">Ver mas</a></small> </td>
             {if $adminName}
             <td> <small><a href="delete/{$producto->idProducto}">Borrar</a></small> </td>

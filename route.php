@@ -15,7 +15,9 @@
     $r->addRoute('producto/:ID', 'GET', 'VerduleriaController', 'showProducto');
     $r->addRoute('logout', 'GET', 'LoginController', 'logout');
     $r->addRoute('addProducto', 'POST', "VerduleriaController", 'addProducto');
-
+    $r->addRoute('delete/:ID', 'GET', 'VerduleriaController', 'deleteProducto');
+    $r->addRoute('categoriaFruta','GET', 'VerduleriaController', 'showFrutas');
+    $r->addRoute('categoriaVerdura','GET', 'VerduleriaController', 'showVerduras');
 
     
     $r->setDefaultRoute("VerduleriaController", "showHome");
