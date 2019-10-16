@@ -19,16 +19,16 @@
     $r->addRoute('delete/:ID', 'GET', 'VerduleriaController', 'deleteProducto');
     $r->addRoute('categorias', 'GET', 'VerduleriaController', 'showCategorias');
     $r->addRoute('categoria/:ID', 'GET', 'VerduleriaController', 'showCategoria');
-    $r->addRoute('deleteCategorias/:ID', 'GET', 'VerduleriaController', 'deleteCategoria');
+    $r->addRoute('deleteCategoria/:ID', 'GET', 'VerduleriaController', 'deleteCategoria');
     $r->addRoute('categoria/:ID','GET', 'VerduleriaController', 'showCategoria');
     $r->addRoute('addCategoria', 'POST', "VerduleriaController", 'addCategoria');
-    $r->addRoute('editCategoria/:ID', 'POST', "VerduleriaController", 'editCategoria');
+    $r->addRoute('editCategoria/:ID', 'POST', "VerduleriaController", 'showEditCategoria');
     $r->addRoute('editProducto/:ID', 'POST', "VerduleriaController", 'editProducto');
 
 
 
     
-    $r->setDefaultRoute("VerduleriaController", "showHome");
+    //$r->setDefaultRoute("VerduleriaController", "showHome");
 
     $r->route($_GET['action'], $_SERVER['REQUEST_METHOD']); 
 

@@ -40,7 +40,14 @@ class VerduleriaView {
         $this->smarty->assign('categoria',$categoria);
         $this->smarty->display('templates/categoria.tpl');     
         
-    } 
+    }
+    
+    public function showEditCategoria($categoria)
+    {
+        $this->smarty->assign('titulo',"editCategoria");
+        $this->smarty->assign('categoria',$categoria);
+        $this->smarty->display('templates/editCategoria.tpl');  
+    }
     public function showError() {
         echo "<h1>ERROR!</h1>";
     }

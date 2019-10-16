@@ -14,8 +14,8 @@
 						
             <td> <small><a href="categoria/{$categoria->idCategoria}">Ver mas</a></small> </td>
             {if $adminName}
-            <td> <small><a href="deleteCategorias/{$categoria->idCategoria}">Borrar</a></small> </td>
-
+            <td> <small><a href="deleteCategoria/{$categoria->idCategoria}">Borrar</a></small> </td>
+            <td> <small><a href="editCategoria/{$categoria->idCategoria}">Editar</a></small> </td>
 
             {/if}
         </tr>
@@ -36,7 +36,7 @@
 
 </div>  
 <div class="container">
-    <form action="editCategoria" method="POST" class="col-md-4 offset-md-4 mt-4">
+    <form method="POST"  action="editCategoria" class="col-md-4 offset-md-4 mt-4">
         <h1>Categoria</h1>
      
         <div class="form-group">
