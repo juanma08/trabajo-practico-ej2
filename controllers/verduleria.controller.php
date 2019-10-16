@@ -89,7 +89,23 @@ class VerduleriaController {
         else {
             $this->view->showError("Faltan datos.");
         }
-        header('Location:' . categorias);
+        
+    }
+    public function editProducto($params= null){
+        $nombre = $_POST['nombre'];
+        $precio = $_POST['precio'];
+        $descripcion = $_POST['descripcion'];
+        $categoria = $_POST['categoria'];
+        $idProducto = $params [':ID'];
 
+        if ((!empty($nombre )) && (!empty($precio)) && (!empty($descripcion)) && (!empty($categoria))) {
+            
+            $this->model->editProducto($nombre, $precio, $descripcion, $categoria, $idProducto);
+
+        }
+        else {
+            $this->view->showError("Faltan datos.");
+        }
+        
     }
 }

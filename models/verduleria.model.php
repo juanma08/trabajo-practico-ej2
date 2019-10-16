@@ -25,7 +25,13 @@ class VerduleriaModel{
     }
     public function delete($idProducto){
         $query = $this->db->prepare('DELETE FROM productos WHERE idProducto = ?');
-        $query->execute([$idProducto]);
-        
+        $query->execute([$idProducto]);   
     }
+    public function editProducto($nombre, $precio, $descripcion, $categoria, $idProducto){
+        
+        $query = $this->db->prepare('UPDATE `productos` SET `Nombre` = ?, `Descripcion` = ?, `idCategoria` = ? WHERE `productos`.`idProducto` = ? ');
+        var_dump($query->errorInfo($nombre, $precio));
+        $query->execute([$nombre, $precio, $descripcion, $categoria, $idProducto ]);
+    }
+
  }

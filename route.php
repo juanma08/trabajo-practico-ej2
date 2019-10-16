@@ -22,6 +22,7 @@
     $r->addRoute('categoria/:ID','GET', 'VerduleriaController', 'showCategoria');
     $r->addRoute('addCategoria', 'POST', "VerduleriaController", 'addCategoria');
     $r->addRoute('editCategoria/:ID', 'POST', "VerduleriaController", 'editCategoria');
+    $r->addRoute('editProducto/:ID', 'POST', "VerduleriaController", 'editProducto');
 
 
 
