@@ -24,11 +24,9 @@ class LoginController {
         $password = $_POST['password'];
 
         $admin = $this->model->getByAdminName($adminName);
-        var_dump($admin->password);
-        var_dump(password_hash($password, PASSWORD_DEFAULT));
-        var_dump($password);
-        if ((!empty($adminName)) && (password_verify($password, $admin->password))) {
-            var_dump("Llegoo");
+               
+        if ((!empty($admin)) && (password_verify($password, $admin->password))) {
+            
             $this->authHelper->login($admin);
             
             header('Location: home');

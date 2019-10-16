@@ -20,7 +20,7 @@ class VerduleriaModel{
     public function save($nombre, $precio, $descripcion, $categoria){
         
         $query = $this->db->prepare('INSERT INTO productos(Nombre, Precio, Descripcion, idCategoria) VALUES (?,?,?,?)');
-        var_dump($query->errorInfo($nombre, $precio));
+        
         $query->execute([$nombre, $precio, $descripcion, $categoria]);
     }
     public function delete($idProducto){
@@ -30,7 +30,7 @@ class VerduleriaModel{
     public function editProducto($nombre, $precio, $descripcion, $categoria, $idProducto){
         
         $query = $this->db->prepare('UPDATE `productos` SET `Nombre` = ?, `Descripcion` = ?, `idCategoria` = ? WHERE `productos`.`idProducto` = ? ');
-        var_dump($query->errorInfo($nombre, $precio));
+        
         $query->execute([$nombre, $precio, $descripcion, $categoria, $idProducto ]);
     }
 

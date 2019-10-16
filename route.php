@@ -7,7 +7,8 @@
     define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
     define("LOGIN", BASE_URL . 'login');
     define("HOME", BASE_URL . 'home');
-
+    define("CATEGORIAS", BASE_URL . 'categorias');
+    
     $r = new Router();
     $r->addRoute('login', 'GET', 'LoginController', 'showLogin');
     $r->addRoute('verify', 'POST', 'LoginController', 'verifyAdmin');
