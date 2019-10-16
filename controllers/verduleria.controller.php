@@ -78,16 +78,18 @@ class VerduleriaController {
 
     }
     public function editCategoria($params= null){
-        $nombre = $_POST['nombre'];
+        $nombre = $_POST['edit'];
         $idCategoria = $params [':ID'];
 
         if (!empty($nombre)) {
             
             $this->modelCategorias->editCategoria($nombre, $idCategoria);
-            header('Location:' . home);
+
         }
         else {
             $this->view->showError("Faltan datos.");
         }
+        header('Location:' . categorias);
+
     }
 }

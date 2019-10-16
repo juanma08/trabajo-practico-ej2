@@ -30,19 +30,10 @@ class CategoriasModel{
         $query->execute([$idCategoria]);
 
     }
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    public function editCategoria($nombre, $idCategoria){
+        $query = $this->db->prepare('UPDATE `categorias` SET `Nombre` = ? WHERE `categorias`.`idCategoria` = ?');
+        echo var_dump($query->errorInfo($nombre, $idCategoria));
+        $query->execute([$nombre, $idCategoria]);
+        
+    }
 }
