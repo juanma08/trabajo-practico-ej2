@@ -1,14 +1,17 @@
 <?php
 include_once('./models/verduleria.model.php');
 include_once('./views/verduleria.view.php');
+include_once('./models/categorias.model.php');
 
 class VerduleriaController {
     private $model;
     private $view;
+    private $modelCategorias;
     
     public function __construct(){
         $this->model=new VerduleriaModel();
         $this->view=new VerduleriaView();
+        $this->modelCategorias=new CategoriasModel();
     }
     public function showHome(){
         $productos = $this->model->getAll();
@@ -23,9 +26,16 @@ class VerduleriaController {
         else
             $this->view->showError('El producto no existe');
     }
-    public function showFrutas(){
-        $frutas= $this->model->getAllFrutas();
-        $this->view->showFrutas($frutas);
+    public function showCategorias(){
+        $categorias = $this->modelCategorias->getCategorias();
+        $this->view->showCategorias($categorias);
+
+    }
+
+    public function showCategoria($params = null){
+        $idCategoria = $params [":ID"];
+        $categoria = $this->modelCategorias->getCategoria($idCategoria);
+        $this->view->showCategoria($categoria);
     }
 
     public function addProducto(){
@@ -42,10 +52,42 @@ class VerduleriaController {
         else {
             $this->view->showError("Faltan datos.");
         }
-    }   
+    }  
+    public function addCategoria(){
+        $nombre = $_POST['nombre'];
+
+        if (!empty($nombre)) {
+            
+            $this->modelCategorias->save($nombre);
+            header('Location:' . home);
+        }
+        else {
+            $this->view->showError("Faltan datos.");
+        }
+    }  
     public function deleteProducto($params= null){
         $idProducto = $params [':ID'];
         $this->model->delete($idProducto);
         
+        
+    }
+    public function deleteCategoria($params= null){
+        $idCategoria = $params [':ID'];
+        $this->modelCategorias->delete($idCategoria);
+        
+
+    }
+    public function editCategoria($params= null){
+        $nombre = $_POST['nombre'];
+        $idCategoria = $params [':ID'];
+
+        if (!empty($nombre)) {
+            
+            $this->modelCategorias->editCategoria($nombre, $idCategoria);
+            header('Location:' . home);
+        }
+        else {
+            $this->view->showError("Faltan datos.");
+        }
     }
 }

@@ -19,11 +19,12 @@
         
         <div class="form-group">
             <label> Categoria </label>
-            <select name="categoria" >
-                <option value="1">Fruta</option>
-                <option value="2">Verdura</option>
-
-
+        
+		
+            <select name="categoria">
+            {foreach $categorias as $categoria}
+                <option value={$categoria->idCategoria}>{$categoria->Nombre}</option>
+            {/foreach}
             </select>
         </div>
 

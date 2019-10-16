@@ -10,11 +10,8 @@ class VerduleriaModel{
         $query -> execute();
         return $query -> fetchAll(PDO::FETCH_OBJ);
     }
-    public function getAllFrutas(){
-        $query = $this->db->prepare("SELECT productos.Nombre,productos.Precio,productos.Descripcion,productos.idProducto FROM productos ON productos.idCategoria = 1");
-        $query -> execute();
-        return $query -> fetchAll(PDO::FETCH_OBJ);
-    }
+ 
+    
     public function get($idProducto){
         $query = $this->db->prepare('SELECT* FROM productos WHERE idProducto = ?');
         $query->execute([$idProducto]);
@@ -29,7 +26,6 @@ class VerduleriaModel{
     public function delete($idProducto){
         $query = $this->db->prepare('DELETE FROM productos WHERE idProducto = ?');
         $query->execute([$idProducto]);
-        header("Location: " . home);
-
+        
     }
  }

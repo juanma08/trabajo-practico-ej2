@@ -12,13 +12,6 @@ class VerduleriaView {
         $this->smarty->assign('adminName', $adminName);
     }
 
-    public function showFrutas($frutas){
-        
-        $this->smarty->assign('titulo',"Lista de frutas");
-        $this->smarty->assign('frutas',$frutas);
-        $this->smarty->display('templates/frutas.tpl');
-
-    }
 
     public function showHome($productos) {
                         
@@ -34,6 +27,18 @@ class VerduleriaView {
         $this->smarty->display('templates/producto.tpl');     
         
     }  
+    public function showCategorias($categorias) {
+        $this->smarty->assign('titulo',"Categorias");
+        $this->smarty->assign('categorias',$categorias);
+        $this->smarty->display('templates/categorias.tpl');     
+        
+    }  
+    public function showCategoria($categoria) {
+        $this->smarty->assign('titulo',"Categoria");
+        $this->smarty->assign('categoria',$categoria);
+        $this->smarty->display('templates/categoria.tpl');     
+        
+    } 
     public function showError() {
         echo "<h1>ERROR!</h1>";
     }

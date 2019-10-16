@@ -19,17 +19,9 @@
     <li class="nav-item">
         <a class="nav-link active" href="home">Locasso</a>
     </li>
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Categorias</a>
-        <div class="dropdown-menu">
-        <a class="dropdown-item" href="categoriaFruta">Frutas</a>
-        <a class="dropdown-item" href="categoriaVerdura">Verduras</a>
-        
+    <li>
+        <a class="nav-link" href="categorias">Categorias</a>
     </li>
-
-
-
-            </li>
             {if $adminName}
                 <div class="navbar-nav ml-auto">
                     <span class="navbar-text">{$adminName}</span>
@@ -41,6 +33,5 @@
                 <a class="nav-item nav-link" href="login">LOGIN</a>
             </div>                 
             {/if}
-        </div>
+        
     </ul>
-    </nav>
