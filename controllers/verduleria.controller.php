@@ -15,8 +15,8 @@ class VerduleriaController {
     }
     public function showHome(){
         $productos = $this->model->getAll();
-
-        $this->view->showHome($productos);
+        $categorias =  $this->modelCategorias->getCategorias();
+        $this->view->showHome($productos, $categorias);
     }
     public function showProducto($params = null){
         $idProducto = $params [":ID"];

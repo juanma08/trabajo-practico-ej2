@@ -13,10 +13,12 @@ class VerduleriaView {
     }
 
 
-    public function showHome($productos) {
+    public function showHome($productos, $categorias) {
                         
         $this->smarty->assign('titulo',"Lista de productos");
         $this->smarty->assign('productos',$productos);
+        $this->smarty->assign('categorias',$categorias);
+
         $this->smarty->display('templates/productos.tpl');     
                         
         
