@@ -15,7 +15,7 @@
             <td> <small><a href="categoria/{$categoria->idCategoria}">Ver mas</a></small> </td>
             {if $adminName}
             <td> <small><a href="deleteCategoria/{$categoria->idCategoria}">Borrar</a></small> </td>
-            <td> <small><a href="editCategoria/{$categoria->idCategoria}">Editar</a></small> </td>
+            <td> <small><a href="editarCategoria/{$categoria->idCategoria}">Editar</a></small> </td>
 
             {/if}
         </tr>

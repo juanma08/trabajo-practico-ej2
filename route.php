@@ -22,13 +22,14 @@
     $r->addRoute('deleteCategoria/:ID', 'GET', 'VerduleriaController', 'deleteCategoria');
     $r->addRoute('categoria/:ID','GET', 'VerduleriaController', 'showCategoria');
     $r->addRoute('addCategoria', 'POST', "VerduleriaController", 'addCategoria');
-    $r->addRoute('editCategoria/:ID', 'POST', "VerduleriaController", 'showEditCategoria');
+    $r->addRoute('editarCategoria/:ID', 'GET', "VerduleriaController", 'showEditCategoria');
+    $r->addRoute('editCategoria', 'POST', "VerduleriaController", 'editCategoria');
     $r->addRoute('editProducto/:ID', 'POST', "VerduleriaController", 'editProducto');
 
 
 
     
-    //$r->setDefaultRoute("VerduleriaController", "showHome");
+    $r->setDefaultRoute("VerduleriaController", "showHome");
 
     $r->route($_GET['action'], $_SERVER['REQUEST_METHOD']); 
 

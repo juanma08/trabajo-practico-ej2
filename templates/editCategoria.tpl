@@ -9,8 +9,8 @@
         <div class="form-group">
             <label>Editar</label>
             <input type="text" name="edit" class="form-control" placeholder="Nombre">
-
         </div>
+        <input type="checkbox" name="idCategoria" value="{$categoria->idCategoria}">Estoy seguro
         <button type="submit" class="btn btn-primary">Editar</button>
     </form>
 

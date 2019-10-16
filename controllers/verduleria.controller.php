@@ -31,10 +31,9 @@ class VerduleriaController {
         }
         
         public function showEditCategoria($params = null){
-            var_dump("Entro");die();
             $idCategoria = $params [":ID"];
             $categoria = $this->modelCategorias->getCategoria($idCategoria);
-            if ($producto)            
+            if ($categoria)            
             $this->view->showEditCategoria($categoria);
             else
             $this->view->showError('La categoria no existe');
@@ -45,11 +44,11 @@ class VerduleriaController {
 
 
     public function editCategoria($params= null){
-                    
+                   
          // chequea si esta logueado
         $this->authHelper->checkLoggedIn();
          
-            $idCategoria = $params [':ID'];
+            $idCategoria = $_POST ['idCategoria'];
             $nombre = $_POST['edit'];
              
             if (!empty($nombre)) {
@@ -60,6 +59,7 @@ class VerduleriaController {
                 else {
                     $this->view->showError("Faltan datos.");
                 }
+                header('Location:' . CATEGORIAS);
         }
     public function showCategorias(){
         $categorias = $this->modelCategorias->getCategorias();
