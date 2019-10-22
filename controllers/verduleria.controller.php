@@ -53,7 +53,6 @@ class VerduleriaController {
              
             if (!empty($nombre)) {
                 $this->modelCategorias->editCategoria($nombre, $idCategoria);
-                $this->view->showEditCategoria();
                 header('Location:' . CATEGORIAS);
                 }
                 else {

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-16 23:13:49
+/* Smarty version 3.1.33, created on 2019-10-23 01:15:25
   from 'C:\xampp\htdocs\Web2\trabajo-practico-ej2\templates\categorias.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5da7880dccabc2_10885315',
+  'unifunc' => 'content_5daf8d8d369429_97852795',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ad9051fcb974d79049b29670817714f7728efafc' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2\\trabajo-practico-ej2\\templates\\categorias.tpl',
-      1 => 1571259857,
+      1 => 1571786088,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5da7880dccabc2_10885315 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5daf8d8d369429_97852795 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     <h1><?php echo $_smarty_tpl->tpl_vars['titulo']->value;?>
@@ -72,34 +72,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </div>
         <button type="submit" class="btn btn-primary">Agregar</button>
     </form>
-
-</div>  
-<div class="container">
-    <form method="POST"  action="editCategoria" class="col-md-4 offset-md-4 mt-4">
-        <h1>Categoria</h1>
-     
-        <div class="form-group">
-            <label>Editar</label>
-            <input type="text" name="edit" class="form-control" placeholder="Nombre">
-              <select name="categoria">
-            <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['categorias']->value, 'categoria');
-if ($_from !== null) {
-foreach ($_from as $_smarty_tpl->tpl_vars['categoria']->value) {
-?>
-                <option value=<?php echo $_smarty_tpl->tpl_vars['categoria']->value->idCategoria;?>
-><?php echo $_smarty_tpl->tpl_vars['categoria']->value->Nombre;?>
-</option>
-            <?php
-}
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-            </select>
-        </div>
-        <button type="submit" class="btn btn-primary">Editar</button>
-    </form>
-
-</div>                    
+</div>      
 <?php }?>
 
 <?php $_smarty_tpl->_subTemplateRender('file:templates/footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);

@@ -33,25 +33,7 @@
         </div>
         <button type="submit" class="btn btn-primary">Agregar</button>
     </form>
-
-</div>  
-<div class="container">
-    <form method="POST"  action="editCategoria" class="col-md-4 offset-md-4 mt-4">
-        <h1>Categoria</h1>
-     
-        <div class="form-group">
-            <label>Editar</label>
-            <input type="text" name="edit" class="form-control" placeholder="Nombre">
-              <select name="categoria">
-            {foreach $categorias as $categoria}
-                <option value={$categoria->idCategoria}>{$categoria->Nombre}</option>
-            {/foreach}
-            </select>
-        </div>
-        <button type="submit" class="btn btn-primary">Editar</button>
-    </form>
-
-</div>                    
+</div>      
 {/if}
 
 {include 'templates/footer.tpl'}

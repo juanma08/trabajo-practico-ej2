@@ -34,6 +34,5 @@ class CategoriasModel{
         $query = $this->db->prepare('UPDATE `categorias` SET `Nombre` = ? WHERE `idCategoria` = ?');
         $query->execute([$nombre, $idCategoria]);
         
-
     }
 }   

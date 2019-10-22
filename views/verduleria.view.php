@@ -42,8 +42,7 @@ class VerduleriaView {
         
     }
     
-    public function showEditCategoria($categoria)
-    {
+    public function showEditCategoria($categoria){
         $this->smarty->assign('titulo',"editCategoria");
         $this->smarty->assign('categoria',$categoria);
         $this->smarty->display('templates/editCategoria.tpl');  
