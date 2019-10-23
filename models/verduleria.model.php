@@ -29,7 +29,7 @@ class VerduleriaModel{
     }
     public function editProducto($nombre, $precio, $descripcion, $categoria, $idProducto){
         
-        $query = $this->db->prepare('UPDATE `productos` SET `Nombre` = ?, `Descripcion` = ?, `idCategoria` = ? WHERE `productos`.`idProducto` = ? ');
+        $query = $this->db->prepare('UPDATE `productos` SET `Nombre` = ?,`Precio = ?`, `Descripcion` = ?, `idCategoria` = ? WHERE `productos.idProducto` = ? ');
         
         $query->execute([$nombre, $precio, $descripcion, $categoria, $idProducto ]);
     }

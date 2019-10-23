@@ -23,6 +23,12 @@ class VerduleriaView {
                         
         
     }
+    public function showEditProducto($producto, $categorias){
+        $this->smarty->assign('titulo',"editProducto");
+        $this->smarty->assign('producto',$producto);
+        $this->smarty->assign('categorias',$categorias);
+        $this->smarty->display('templates/editProducto.tpl');  
+    }
     public function showProducto($producto) {
         $this->smarty->assign('titulo',"Producto");
         $this->smarty->assign('producto',$producto);
@@ -51,9 +57,8 @@ class VerduleriaView {
         echo "<h1>ERROR!</h1>";
     }
 
-
-
     
+
 
 
 

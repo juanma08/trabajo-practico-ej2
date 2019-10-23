@@ -1,11 +1,9 @@
 {include 'templates/header.tpl'}
-    <h1>{$titulo}</h1>
+
+<h1> {$producto->Nombre}</h1>
 
 <table>
     <tr>
-        <th>
-         Producto
-        </th>
         <th>
          Precio
         </th>
@@ -15,28 +13,21 @@
         <th>
          Categoria
         </th>
-    </tr>
-	{foreach $productos as $producto}
-        
+    </tr>        
 		<tr>			
-			<td>{$producto->Nombre}</td>
 			<td>{$producto->Precio}</td>
 			<td>{$producto->Descripcion}</td>
-			<td>{$producto->Categoria}</td>			
-            <td> <small><a href="producto/{$producto->idProducto}">Ver mas</a></small> </td>
-            {if $adminName}
-            <td> <small><a href="delete/{$producto->idProducto}">Borrar</a></small> </td>
-            <td> <small><a href="editarProducto/{$producto->idProducto}">Editar</a></small> </td>
-            {/if}
+			<td>Arreglar</td>			
         </tr>
-    {/foreach}
 </table>
 
-{if $adminName}
 
-      <div class="container">
-    <form action="addProducto" method="POST" class="col-md-4 offset-md-4 mt-4">
-        <h1>{$titulo}</h1>
+
+
+
+ <div class="container">
+    <form action="editProducto" method="POST" class="col-md-4 offset-md-4 mt-4">
+        <h1>Editar</h1>
      
         <div class="form-group">
             <label>Producto</label>
@@ -54,19 +45,19 @@
         </div>
         
         <div class="form-group">
-            <label> Categoria </label>
-        
-		
+            <label> Categoria </label>		
             <select name="categoria">
             {foreach $categorias as $categoria}
                 <option value={$categoria->idCategoria}>{$categoria->Nombre}</option>
             {/foreach}
             </select>
         </div>
-
-        <button type="submit" class="btn btn-primary">Agregar</button>
+        <div>
+        <input type="checkbox" name="idProducto" value="{$producto->idProducto}">Estoy seguro
+        <button type="submit" class="btn btn-primary">Editar</button>
+        </div>
     </form>
-</div>                
-{/if}
+
+</div>         
 
 {include 'templates/footer.tpl'}

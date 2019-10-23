@@ -30,6 +30,16 @@ class VerduleriaController {
             $this->view->showError('El producto no existe');
         }
         
+        public function showEditProducto($params = null){
+            $idProducto = $params [":ID"];
+            $producto = $this->model->get($idProducto);
+            $categorias =  $this->modelCategorias->getCategorias();
+        if ($producto)
+            $this->view->showEditProducto($producto, $categorias);
+            else
+            $this->view->showError('El producto no existe');
+        }
+        
         public function showEditCategoria($params = null){
             $idCategoria = $params [":ID"];
             $categoria = $this->modelCategorias->getCategoria($idCategoria);
@@ -137,12 +147,12 @@ class VerduleriaController {
         $precio = $_POST['precio'];
         $descripcion = $_POST['descripcion'];
         $categoria = $_POST['categoria'];
-        $idProducto = $params [':ID'];
+        $idProducto = $_POST['idProducto'];
 
         if ((!empty($nombre )) && (!empty($precio)) && (!empty($descripcion)) && (!empty($categoria))) {
             
             $this->model->editProducto($nombre, $precio, $descripcion, $categoria, $idProducto);
-
+            header('Location:' . HOME);
         }
         else {
             $this->view->showError("Faltan datos.");
