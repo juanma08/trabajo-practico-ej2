@@ -17,7 +17,7 @@
 		<tr>			
 			<td>{$producto->Precio}</td>
 			<td>{$producto->Descripcion}</td>
-			<td>{$producto->idCategoria}</td>			
+			<td>{$producto->Categoria}</td>			
         </tr>
 </table>
 
@@ -31,17 +31,17 @@
      
         <div class="form-group">
             <label>Producto</label>
-            <input type="text" name="nombre" class="form-control" placeholder="producto">
+            <input type="text" name="nombre" class="form-control" value="{$producto->Nombre}">
         </div>
 
         <div class="form-group">
             <label>Precio </label>
-            <input type="number" name="precio" class="form-control" placeholder="precio">
+            <input type="number" name="precio" class="form-control" value="{$producto->Precio}">
         </div>
 
         <div class="form-group">
             <label> Descripcion </label>
-            <input type="text" name="descripcion" class="form-control" placeholder="descripcion">
+            <input type="text" name="descripcion" class="form-control" value="{$producto->Descripcion}">
         </div>
         
         <div class="form-group">
@@ -53,7 +53,7 @@
             </select>
         </div>
         <div>
-        <input type="hidden" name="idProducto" value="{$producto->idProducto}">Estoy seguro
+        <input type="hidden" name="idProducto" value="{$producto->idProducto}">
         <button type="submit" class="btn btn-primary">Editar</button>
         </div>
     </form>

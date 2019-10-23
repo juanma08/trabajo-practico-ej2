@@ -6,14 +6,14 @@ class VerduleriaModel{
         //Guardo la conexion en la variable.
     }
     public function getAll(){//Hago funcion que va a usar el view y el controller para imprimir toda la tabla
-        $query = $this->db->prepare("SELECT productos.Nombre,productos.Precio,productos.Descripcion,productos.idProducto, categorias.Nombre as Categoria FROM productos JOIN categorias ON productos.idCategoria = categorias.idCategoria");
+        $query = $this->db->prepare("SELECT productos.Nombre, productos.Precio, productos.Descripcion, productos.idProducto, categorias.Nombre as Categoria FROM productos JOIN categorias ON productos.idCategoria = categorias.idCategoria");
         $query -> execute();
         return $query -> fetchAll(PDO::FETCH_OBJ);
     }
  
     
     public function get($idProducto){
-        $query = $this->db->prepare('SELECT* FROM productos WHERE idProducto = ?');
+        $query = $this->db->prepare('SELECT productos.Nombre, productos.Precio, productos.Descripcion, productos.idProducto, categorias.Nombre as Categoria FROM productos JOIN categorias ON productos.idCategoria = categorias.idCategoria  WHERE idProducto = ? ');
         $query->execute([$idProducto]);
         return $query->fetch(PDO::FETCH_OBJ);
     }

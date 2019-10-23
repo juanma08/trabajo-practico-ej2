@@ -1,4 +1,7 @@
 {include 'templates/header.tpl'}
-<h1> {$producto->Nombre} ({$producto->Descripcion})</h1>
-<p>{$producto->Precio|wordwrap:50:"<br/>\n"} </p>
+<h1> {$producto->Nombre} </h1>
+<h3> Descripcion: {$producto->Descripcion} </h2>
+<h3> Categoria: {$producto->Categoria} </h2>
+<h2> Precio: {$producto->Precio}</h2>
+
 {include 'templates/footer.tpl'}
