@@ -28,7 +28,7 @@
 
 
     
-    //$r->setDefaultRoute("VerduleriaController", "showHome");
+    $r->setDefaultRoute("VerduleriaController", "showHome");
 
     $r->route($_GET['action'], $_SERVER['REQUEST_METHOD']); 
 

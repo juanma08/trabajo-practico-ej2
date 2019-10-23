@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-23 02:23:56
+/* Smarty version 3.1.33, created on 2019-10-23 20:42:36
   from 'C:\xampp\htdocs\Web2\trabajo-practico-ej2\templates\editProducto.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5daf9d9c545993_98446666',
+  'unifunc' => 'content_5db09f1c0acb23_05885871',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2a07b2a70010cf3c24be90da10c8bab96a6648bb' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2\\trabajo-practico-ej2\\templates\\editProducto.tpl',
-      1 => 1571790231,
+      1 => 1571856141,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5daf9d9c545993_98446666 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5db09f1c0acb23_05885871 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -46,7 +46,8 @@ $_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cach
 </td>
 			<td><?php echo $_smarty_tpl->tpl_vars['producto']->value->Descripcion;?>
 </td>
-			<td>Arreglar</td>			
+			<td><?php echo $_smarty_tpl->tpl_vars['producto']->value->idCategoria;?>
+</td>			
         </tr>
 </table>
 
@@ -91,7 +92,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             </select>
         </div>
         <div>
-        <input type="checkbox" name="idProducto" value="<?php echo $_smarty_tpl->tpl_vars['producto']->value->idProducto;?>
+        <input type="hidden" name="idProducto" value="<?php echo $_smarty_tpl->tpl_vars['producto']->value->idProducto;?>
 ">Estoy seguro
         <button type="submit" class="btn btn-primary">Editar</button>
         </div>

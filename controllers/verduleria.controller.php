@@ -148,7 +148,7 @@ class VerduleriaController {
         $descripcion = $_POST['descripcion'];
         $categoria = $_POST['categoria'];
         $idProducto = $_POST['idProducto'];
-
+        
         if ((!empty($nombre )) && (!empty($precio)) && (!empty($descripcion)) && (!empty($categoria))) {
             
             $this->model->editProducto($nombre, $precio, $descripcion, $categoria, $idProducto);

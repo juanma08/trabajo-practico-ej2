@@ -17,7 +17,7 @@
 		<tr>			
 			<td>{$producto->Precio}</td>
 			<td>{$producto->Descripcion}</td>
-			<td>Arreglar</td>			
+			<td>{$producto->idCategoria}</td>			
         </tr>
 </table>
 
@@ -53,7 +53,7 @@
             </select>
         </div>
         <div>
-        <input type="checkbox" name="idProducto" value="{$producto->idProducto}">Estoy seguro
+        <input type="hidden" name="idProducto" value="{$producto->idProducto}">Estoy seguro
         <button type="submit" class="btn btn-primary">Editar</button>
         </div>
     </form>
