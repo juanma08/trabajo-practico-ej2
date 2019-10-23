@@ -17,7 +17,7 @@ class VerduleriaController {
         $this->authHelper = new AuthHelper();
    }
    public function showHome(){
-       $productos = $this->model->getAll();
+        $productos = $this->model->getAll();
         $categorias =  $this->modelCategorias->getCategorias();
         $this->view->showHome($productos, $categorias);
     }

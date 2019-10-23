@@ -19,9 +19,9 @@ class VerduleriaModel{
     }
     public function save($nombre, $precio, $descripcion, $categoria){
         
-        $query = $this->db->prepare('INSERT INTO productos(Nombre, Precio, Descripcion, idCategoria) VALUES (?,?,?,?)');
-        
+        $query = $this->db->prepare('INSERT INTO productos(Nombre, Precio, Descripcion, idCategoria) VALUES (?,?,?,?)');        
         $query->execute([$nombre, $precio, $descripcion, $categoria]);
+        return $this->lastInsertId();
     }
     public function delete($idProducto){
         $query = $this->db->prepare('DELETE FROM productos WHERE idProducto = ?');
