@@ -11,11 +11,11 @@ class verduleriaApiController {
     public function __construct() {
         $this->model = new VerduleriaModel();
         $this->view = new JSONView();
-        $this->data = file_get_contents("php://input");
+        $this->data = file_get_contents("php://input"); //agarra el body en RAW
     }
 
     private function getData() {
-        return json_decode($this->data);
+        return json_decode($this->data); //convierte el RAW en JSON
     }
 
     public function getProductos($params = null)
@@ -38,14 +38,17 @@ class verduleriaApiController {
     {
         
         $data=$this->getData();
-        $idProducto=$this->model->save($data->nombre, $data->precio, $data->descripcion, $data->categoria);
-        $producto=$this->model->get($idProducto);
-        
+        $producto=$this->model->save($data->Nombre, $data->Precio, $data->Descripcion, $data->idCategoria);
         if ($producto)
-            $this->view->response($producto);
+            $this->view->response($producto, 200);
         else
-            $this->view->response("la tarea no fue creada");
+            $this->view->response("la tarea no fue creada", 404);
       
     }
 
+    public function deleteProducto($params= null)
+    {
+        $idProducto = $params [':ID'];
+        $this->model->delete($idProducto);
+    }
 }

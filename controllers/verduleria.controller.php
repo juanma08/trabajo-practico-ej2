@@ -91,11 +91,11 @@ class VerduleriaController {
         $nombre = $_POST['nombre'];
         $precio = $_POST['precio'];
         $descripcion = $_POST['descripcion'];
-        $categoria = $_POST['categoria'];
+        $idCategoria = $_POST['categoria'];
         
-        if ((!empty($nombre )) && (!empty($precio)) && (!empty($descripcion)) && (!empty($categoria))) {
+        if ((!empty($nombre )) && (!empty($precio)) && (!empty($descripcion)) && (!empty($idCategoria))) {
             
-            $this->model->save($nombre, $precio, $descripcion, $categoria);
+            $this->model->save($nombre, $precio, $descripcion, $idCategoria);
             header('Location:' . HOME);
         }
         else {

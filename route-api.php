@@ -8,16 +8,16 @@
 
     $r = new Router();
 
-    $r->addRoute('/productos', 'GET', 'verduleriaApiController', 'getProductos');
-    $r->addRoute('/productos/:ID', 'GET', 'verduleriaApiController', 'getProducto');
-    $r->addRoute('/productos', 'POST', 'verduleriaApiController', 'addProducto');
-    $r->addRoute('/productos/:ID', 'DELETE', 'verduleriaApiController', 'deleteProducto');
-    $r->addRoute('/productos/:ID', 'PUT', 'verduleriaApiController', 'editProducto');
-    $r->addRoute('/categorias', 'GET', 'categoriasApiController', 'getCategorias');
-    $r->addRoute('/categorias/:ID', 'GET', 'categoriasApiController', 'getCategoria');
-    $r->addRoute('/categorias/:ID', 'DELETE', 'categoriasApiController', 'deleteCategoria');
-    $r->addRoute('/categorias', 'POST', 'categoriasApiController', 'addCategoria');
-    $r->addRoute('/categorias/:ID', 'PUT', 'categoriasApiController', 'editCategoria');
+    $r->addRoute('productos', 'GET', 'verduleriaApiController', 'getProductos');
+    $r->addRoute('productos/:ID', 'GET', 'verduleriaApiController', 'getProducto');
+    $r->addRoute('productos', 'POST', 'verduleriaApiController', 'addProducto');
+    $r->addRoute('productos/:ID', 'DELETE', 'verduleriaApiController', 'deleteProducto');
+    $r->addRoute('productos/:ID', 'PUT', 'verduleriaApiController', 'editProducto');
+    $r->addRoute('categorias', 'GET', 'categoriasApiController', 'getCategorias');
+    $r->addRoute('categorias/:ID', 'GET', 'categoriasApiController', 'getCategoria');
+    $r->addRoute('categorias/:ID', 'DELETE', 'categoriasApiController', 'deleteCategoria');
+    $r->addRoute('categorias', 'POST', 'categoriasApiController', 'addCategoria');
+    $r->addRoute('categorias/:ID', 'PUT', 'categoriasApiController', 'editCategoria');
 
     $r->route($_GET['resource'], $_SERVER['REQUEST_METHOD']);
 

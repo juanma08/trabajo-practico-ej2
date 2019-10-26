@@ -1,7 +1,10 @@
 <?php
 
 class AuthHelper {
-    public function __construct() {}
+    public function __construct() {
+        if (session_status() != PHP_SESSION_ACTIVE)
+            session_start();
+    }
 
     public function login($admin) {
         // INICIO LA SESSION Y LOGUEO AL USUARIO
@@ -24,8 +27,9 @@ class AuthHelper {
     }
 
     public function getLoggedAdminName() {
-        if (session_status() != PHP_SESSION_ACTIVE)
-            session_start();
-        return $_SESSION['ADMIN'];
+        if (isset($_SESSION['ADMIN'])){           
+            return $_SESSION['ADMIN'];
+        }
+        else return null;
     }
 }

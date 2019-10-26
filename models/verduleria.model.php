@@ -17,11 +17,12 @@ class VerduleriaModel{
         $query->execute([$idProducto]);
         return $query->fetch(PDO::FETCH_OBJ);
     }
-    public function save($nombre, $precio, $descripcion, $categoria){
+    public function save($nombre, $precio, $descripcion, $idCategoria){
         
         $query = $this->db->prepare('INSERT INTO productos(Nombre, Precio, Descripcion, idCategoria) VALUES (?,?,?,?)');        
-        $query->execute([$nombre, $precio, $descripcion, $categoria]);
-        return $this->lastInsertId();
+        $query->execute([$nombre, $precio, $descripcion, $idCategoria]);
+        $lastInsertId = $this->db->lastInsertId();
+        return $this->get($lastInsertId);
     }
     public function delete($idProducto){
         $query = $this->db->prepare('DELETE FROM productos WHERE idProducto = ?');
