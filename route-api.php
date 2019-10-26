@@ -18,6 +18,6 @@
     $r->addRoute('categorias/:ID', 'DELETE', 'categoriasApiController', 'deleteCategoria');
     $r->addRoute('categorias', 'POST', 'categoriasApiController', 'addCategoria');
     $r->addRoute('categorias/:ID', 'PUT', 'categoriasApiController', 'editCategoria');
-
+    
     $r->route($_GET['resource'], $_SERVER['REQUEST_METHOD']);
 

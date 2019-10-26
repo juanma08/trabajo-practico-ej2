@@ -51,4 +51,19 @@ class verduleriaApiController {
         $idProducto = $params [':ID'];
         $this->model->delete($idProducto);
     }
-}
+    public function editProducto($params= null){
+        
+        $data=$this->getData();
+        $idProducto = $params [':ID'];
+        
+        $producto=$this->model->get($idProducto);
+        if ($producto) {
+            $this->model->editProducto($data->Nombre, $data->Precio, $data->Descripcion, $data->Categoria, $idProducto);
+            $this->view->response($producto, 200);
+        }
+        else {
+            $this->view->response("El producto con el id:${idProducto} no existe", 404);
+        }
+        
+    }
+    }
