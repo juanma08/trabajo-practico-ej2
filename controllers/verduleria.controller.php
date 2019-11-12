@@ -20,6 +20,7 @@ class VerduleriaController {
         $productos = $this->model->getAll();
         $categorias =  $this->modelCategorias->getCategorias();
         $this->view->showHome($productos, $categorias);
+        var_dump(hash("SHA256","1234")); die();
     }
     public function showProducto($params = null){
         $idProducto = $params [":ID"];

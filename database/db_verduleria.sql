@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-10-2019 a las 23:11:24
+-- Tiempo de generación: 13-11-2019 a las 00:31:21
 -- Versión del servidor: 10.1.40-MariaDB
 -- Versión de PHP: 7.3.5
 
@@ -25,25 +25,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `admins`
---
-
-CREATE TABLE `admins` (
-  `idAdmin` int(11) NOT NULL,
-  `adminName` varchar(50) NOT NULL,
-  `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `admins`
---
-
-INSERT INTO `admins` (`idAdmin`, `adminName`, `password`) VALUES
-(2, 'locasso', '$2y$10$VxzuU0Lutp47kQCp7CG9Z.7sFw9SZqGBz1LX96J7PoERvwhy9Du1K');
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `categorias`
 --
 
@@ -57,8 +38,8 @@ CREATE TABLE `categorias` (
 --
 
 INSERT INTO `categorias` (`idCategoria`, `Nombre`) VALUES
-(1, 'Fruta'),
-(2, 'Verdura');
+(4, 'Frutas'),
+(8, 'Tomate2');
 
 -- --------------------------------------------------------
 
@@ -79,18 +60,32 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`idProducto`, `Nombre`, `Precio`, `Descripcion`, `idCategoria`) VALUES
-(1, 'Pomelo', 55, 'Citrico', 1),
-(2, 'Mandarina', 25, 'Citrico', 1);
+(29, 'Graviola', 45, 'Niidea', 4),
+(33, 'Tomate', 35, 'Chico', 4);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `idUsuario` int(11) NOT NULL,
+  `usuarioName` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `admin` bit(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`idUsuario`, `usuarioName`, `password`, `admin`) VALUES
+(1, 'locasso', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', b'0');
 
 --
 -- Índices para tablas volcadas
 --
-
---
--- Indices de la tabla `admins`
---
-ALTER TABLE `admins`
-  ADD PRIMARY KEY (`idAdmin`);
 
 --
 -- Indices de la tabla `categorias`
@@ -106,26 +101,32 @@ ALTER TABLE `productos`
   ADD KEY `FK_idCategoria` (`idCategoria`) USING BTREE;
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- Indices de la tabla `usuarios`
 --
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`idUsuario`);
 
 --
--- AUTO_INCREMENT de la tabla `admins`
+-- AUTO_INCREMENT de las tablas volcadas
 --
-ALTER TABLE `admins`
-  MODIFY `idAdmin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `idCategoria` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idCategoria` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `idProducto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idProducto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restricciones para tablas volcadas
