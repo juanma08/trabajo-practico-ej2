@@ -13,7 +13,7 @@ class VerduleriaModel{
  
     
     public function get($idProducto){
-        $query = $this->db->prepare('SELECT productos.Nombre, productos.Precio, productos.Descripcion, productos.idProducto, categorias.Nombre as Categoria FROM productos JOIN categorias ON productos.idCategoria = categorias.idCategoria  WHERE idProducto = ? ');
+        $query = $this->db->prepare('SELECT productos.Nombre, productos.Precio, productos.Descripcion, productos.idProducto,productos.imagen, categorias.Nombre as Categoria FROM productos JOIN categorias ON productos.idCategoria = categorias.idCategoria  WHERE idProducto = ? ');
         $query->execute([$idProducto]);
         return $query->fetch(PDO::FETCH_OBJ);
     }

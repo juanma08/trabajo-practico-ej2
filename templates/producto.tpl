@@ -3,5 +3,6 @@
 <h3> Descripcion: {$producto->Descripcion} </h2>
 <h3> Categoria: {$producto->Categoria} </h2>
 <h2> Precio: {$producto->Precio}</h2>
+<img src="{$producto->imagen}" alt="">
 
 {include 'templates/footer.tpl'}

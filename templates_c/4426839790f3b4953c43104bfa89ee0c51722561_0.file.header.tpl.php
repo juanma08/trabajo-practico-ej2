@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-13 00:49:00
+/* Smarty version 3.1.33, created on 2019-11-13 23:44:29
   from 'C:\xampp\htdocs\WEB-2\trabajo-practico-especial-api\trabajo-practico-ej2\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5dcb44ec654cf6_80373832',
+  'unifunc' => 'content_5dcc874d9671f9_37415672',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4426839790f3b4953c43104bfa89ee0c51722561' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WEB-2\\trabajo-practico-especial-api\\trabajo-practico-ej2\\templates\\header.tpl',
-      1 => 1573602532,
+      1 => 1573685068,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5dcb44ec654cf6_80373832 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dcc874d9671f9_37415672 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,7 +40,7 @@ function content_5dcb44ec654cf6_80373832 (Smarty_Internal_Template $_smarty_tpl)
     <?php echo '<script'; ?>
  src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"><?php echo '</script'; ?>
 >
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title><?php echo $_smarty_tpl->tpl_vars['titulo']->value;?>
 </title>
 </head>
