@@ -96,6 +96,8 @@ class VerduleriaController {
             if($_FILES['img']['type'] == "image/jpg" || $_FILES['img']['type'] == "image/jpeg" 
             || $_FILES['img']['type'] == "image/png" ){
                 $this->model->save($nombre, $precio, $descripcion, $idCategoria, $_FILES['img']);
+                header('Location:' . HOME);
+
             }
             else {
                 $this->model->save($nombre, $precio, $descripcion, $idCategoria);
