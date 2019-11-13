@@ -22,13 +22,13 @@
     <li>
         <a class="nav-link" href="categorias">Categorias</a>
     </li>
-            {if $adminName}
+            {if $usuarioName}
                 <div class="navbar-nav ml-auto">
-                    <span class="navbar-text">{$adminName}</span>
+                    <span class="navbar-text">{$usuarioName}</span>
                     <a class="nav-item nav-link" href="logout">LOGOUT</a>
                 </div>
             {/if}
-            {if !$adminName}
+            {if !$usuarioName}
             <div class="navbar-nav ml-auto">
                 <a class="nav-item nav-link" href="login">LOGIN</a>
             </div>                 

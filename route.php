@@ -11,7 +11,7 @@
     
     $r = new Router();
     $r->addRoute('login', 'GET', 'LoginController', 'showLogin');
-    $r->addRoute('verify', 'POST', 'LoginController', 'verifyAdmin');
+    $r->addRoute('verify', 'POST', 'LoginController', 'verifyUsuario');
     $r->addRoute('logout', 'GET', 'LoginController', 'logout');
     $r->addRoute('home', 'GET', 'VerduleriaController', 'showHome');
     $r->addRoute('producto/:ID', 'GET', 'VerduleriaController', 'showProducto');

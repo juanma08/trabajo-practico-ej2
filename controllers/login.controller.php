@@ -1,6 +1,6 @@
 <?php
 include_once('./views/login.view.php');
-include_once('./models/admins.model.php');
+include_once('./models/usuarios.model.php');
 include_once('./helpers/auth.helper.php');
 
 class LoginController {
@@ -11,7 +11,7 @@ class LoginController {
 
     public function __construct(){
         $this->view = new LoginView();
-        $this->model = new AdminsModel();
+        $this->model = new UsuariosModel();
         $this->authHelper = new AuthHelper();
     }
     
@@ -19,15 +19,15 @@ class LoginController {
         $this->view->showLogin();
     }
 
-    public function verifyAdmin(){
-        $adminName = $_POST['adminName'];
+    public function verifyusuario(){
+        $usuarioName = $_POST['usuarioName'];
         $password = $_POST['password'];
 
-        $admin = $this->model->getByAdminName($adminName);
+        $usuario = $this->model->getByusuarioName($usuarioName);
                
-        if ((!empty($admin)) && (password_verify($password, $admin->password))) {
+        if ((!empty($usuario)) && (password_verify($password, $usuario->password))) {
             
-            $this->authHelper->login($admin);
+            $this->authHelper->login($usuario);
             
             header('Location: home');
         } else {

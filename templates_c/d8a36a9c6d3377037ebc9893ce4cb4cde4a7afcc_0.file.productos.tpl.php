@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-26 05:24:17
+/* Smarty version 3.1.33, created on 2019-11-13 02:18:54
   from 'C:\xampp\htdocs\WEB-2\trabajo-practico-especial-api\trabajo-practico-ej2\templates\productos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5db3bc61877a46_87530187',
+  'unifunc' => 'content_5dcb59fe0e0bd6_01789530',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd8a36a9c6d3377037ebc9893ce4cb4cde4a7afcc' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WEB-2\\trabajo-practico-especial-api\\trabajo-practico-ej2\\templates\\productos.tpl',
-      1 => 1571859864,
+      1 => 1573606410,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5db3bc61877a46_87530187 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dcb59fe0e0bd6_01789530 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     <h1><?php echo $_smarty_tpl->tpl_vars['titulo']->value;?>
@@ -60,7 +60,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['producto']->value) {
 </td>			
             <td> <small><a href="producto/<?php echo $_smarty_tpl->tpl_vars['producto']->value->idProducto;?>
 ">Ver mas</a></small> </td>
-            <?php if ($_smarty_tpl->tpl_vars['adminName']->value) {?>
+            <?php if ($_smarty_tpl->tpl_vars['admin']->value) {?>
             <td> <small><a href="delete/<?php echo $_smarty_tpl->tpl_vars['producto']->value->idProducto;?>
 ">Borrar</a></small> </td>
             <td> <small><a href="editarProducto/<?php echo $_smarty_tpl->tpl_vars['producto']->value->idProducto;?>
@@ -73,10 +73,11 @@ foreach ($_from as $_smarty_tpl->tpl_vars['producto']->value) {
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </table>
 
-<?php if ($_smarty_tpl->tpl_vars['adminName']->value) {?>
+<?php if ($_smarty_tpl->tpl_vars['admin']->value) {?>
 
       <div class="container">
-    <form action="addProducto" method="POST" class="col-md-4 offset-md-4 mt-4">
+    <form action="addProducto" method="POST" class="col-md-4 offset-md-4 mt-4" enctype="multipart/form-data">
+>
         <h1><?php echo $_smarty_tpl->tpl_vars['titulo']->value;?>
 </h1>
      
@@ -113,6 +114,11 @@ foreach ($_from as $_smarty_tpl->tpl_vars['categoria']->value) {
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             </select>
+        </div>
+        
+        <div class="form-group">
+            <label> IMAGEN </label>
+            <input type="file" name="img" id="imageToUpload">
         </div>
 
         <button type="submit" class="btn btn-primary">Agregar</button>

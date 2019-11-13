@@ -17,12 +17,21 @@ class VerduleriaModel{
         $query->execute([$idProducto]);
         return $query->fetch(PDO::FETCH_OBJ);
     }
-    public function save($nombre, $precio, $descripcion, $idCategoria){
-        
-        $query = $this->db->prepare('INSERT INTO productos(Nombre, Precio, Descripcion, idCategoria) VALUES (?,?,?,?)');        
-        $query->execute([$nombre, $precio, $descripcion, $idCategoria]);
+    public function save($nombre, $precio, $descripcion, $idCategoria, $img = null){
+        $pathImg = null;
+        if ($img)
+            $pathImg = $this->uploadImage($img);
+
+
+        $query = $this->db->prepare('INSERT INTO productos(Nombre, Precio, Descripcion, idCategoria, imagen) VALUES (?,?,?,?,?)');        
+        $query->execute([$nombre, $precio, $descripcion, $idCategoria, $pathImg]);
         $lastInsertId = $this->db->lastInsertId();
         return $this->get($lastInsertId);
+    }
+    private function uploadImage($img){
+        $target = "img/producto/" . uniqid() . "." . strtolower(pathinfo($img['name'], PATHINFO_EXTENSION));  
+        move_uploaded_file($img['tmp_name'], $target);
+        return $target;
     }
     public function delete($idProducto){
         $query = $this->db->prepare('DELETE FROM productos WHERE idProducto = ?');

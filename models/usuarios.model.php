@@ -1,6 +1,6 @@
 <?php
 
-class AdminsModel {
+class usuariosModel {
 
     private $db;
 
@@ -11,9 +11,9 @@ class AdminsModel {
     /**
      * Retorna un usuario según el username pasado.
      */
-    public function getByAdminName($adminName) {
-        $query = $this->db->prepare('SELECT * FROM admins WHERE adminName = ?');
-        $query->execute(array($adminName));
+    public function getByusuarioName($usuarioName) {
+        $query = $this->db->prepare('SELECT * FROM usuarios WHERE usuarioName = ?');
+        $query->execute(array($usuarioName));
 
         return $query->fetch(PDO::FETCH_OBJ);
     }

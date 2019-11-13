@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-26 05:24:17
+/* Smarty version 3.1.33, created on 2019-11-13 00:49:00
   from 'C:\xampp\htdocs\WEB-2\trabajo-practico-especial-api\trabajo-practico-ej2\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5db3bc61ebfa02_41174359',
+  'unifunc' => 'content_5dcb44ec654cf6_80373832',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4426839790f3b4953c43104bfa89ee0c51722561' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WEB-2\\trabajo-practico-especial-api\\trabajo-practico-ej2\\templates\\header.tpl',
-      1 => 1571859864,
+      1 => 1573602532,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5db3bc61ebfa02_41174359 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dcb44ec654cf6_80373832 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,14 +53,14 @@ function content_5db3bc61ebfa02_41174359 (Smarty_Internal_Template $_smarty_tpl)
     <li>
         <a class="nav-link" href="categorias">Categorias</a>
     </li>
-            <?php if ($_smarty_tpl->tpl_vars['adminName']->value) {?>
+            <?php if ($_smarty_tpl->tpl_vars['usuarioName']->value) {?>
                 <div class="navbar-nav ml-auto">
-                    <span class="navbar-text"><?php echo $_smarty_tpl->tpl_vars['adminName']->value;?>
+                    <span class="navbar-text"><?php echo $_smarty_tpl->tpl_vars['usuarioName']->value;?>
 </span>
                     <a class="nav-item nav-link" href="logout">LOGOUT</a>
                 </div>
             <?php }?>
-            <?php if (!$_smarty_tpl->tpl_vars['adminName']->value) {?>
+            <?php if (!$_smarty_tpl->tpl_vars['usuarioName']->value) {?>
             <div class="navbar-nav ml-auto">
                 <a class="nav-item nav-link" href="login">LOGIN</a>
             </div>                 

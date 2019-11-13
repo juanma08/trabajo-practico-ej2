@@ -8,8 +8,10 @@ class VerduleriaView {
         $this->smarty = new Smarty();
         $this->smarty->assign('basehref', BASE_URL);
         $this->authHelper = new AuthHelper();
-        $adminName = $this->authHelper->getLoggedAdminName();
-        $this->smarty->assign('adminName', $adminName);
+        $usuarioName = $this->authHelper->getLoggedusuarioName();
+        $admin = $this->authHelper->checkAdmin();
+        $this->smarty->assign('usuarioName', $usuarioName);
+        $this->smarty->assign('admin', $admin);
     }
 
 

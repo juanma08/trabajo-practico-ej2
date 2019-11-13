@@ -20,7 +20,7 @@ class VerduleriaController {
         $productos = $this->model->getAll();
         $categorias =  $this->modelCategorias->getCategorias();
         $this->view->showHome($productos, $categorias);
-        var_dump(hash("SHA256","1234")); die();
+
     }
     public function showProducto($params = null){
         $idProducto = $params [":ID"];
@@ -85,24 +85,30 @@ class VerduleriaController {
     
     public function addProducto(){
         
-        
-        // chequea si esta logueado
-        $this->authHelper->checkLoggedIn();
-        
+        if ($this->authHelper->checkAdmin()) {
+
         $nombre = $_POST['nombre'];
         $precio = $_POST['precio'];
         $descripcion = $_POST['descripcion'];
         $idCategoria = $_POST['categoria'];
         
         if ((!empty($nombre )) && (!empty($precio)) && (!empty($descripcion)) && (!empty($idCategoria))) {
-            
-            $this->model->save($nombre, $precio, $descripcion, $idCategoria);
+            if($_FILES['img']['type'] == "image/jpg" || $_FILES['img']['type'] == "image/jpeg" 
+            || $_FILES['img']['type'] == "image/png" ){
+                $this->model->save($nombre, $precio, $descripcion, $idCategoria, $_FILES['img']);
+            }
+            else {
+                $this->model->save($nombre, $precio, $descripcion, $idCategoria);
             header('Location:' . HOME);
+            }
         }
         else {
-            $this->view->showError("Faltan datos.");
-        }
-    }  
+            $this->view->showError("ERROR");
+            
+    }
+    }
+}  
+
     public function addCategoria(){
         
         // chequea si esta logueado

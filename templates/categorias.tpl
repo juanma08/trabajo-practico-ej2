@@ -13,7 +13,7 @@
 			<td>{$categoria->Nombre}</td>
 						
             <td> <small><a href="categoria/{$categoria->idCategoria}">Ver mas</a></small> </td>
-            {if $adminName}
+            {if $admin}
             <td> <small><a href="deleteCategoria/{$categoria->idCategoria}">Borrar</a></small> </td>
             <td> <small><a href="editarCategoria/{$categoria->idCategoria}">Editar</a></small> </td>
 
@@ -22,7 +22,7 @@
     {/foreach}
 </table>
 
-{if $adminName}
+{if $admin}
 <div class="container">
     <form action="addCategoria" method="POST" class="col-md-4 offset-md-4 mt-4">
         <h1>{$titulo}</h1>

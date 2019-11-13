@@ -9,9 +9,9 @@ class LoginView {
     public function __construct(){
         $this->smarty = new Smarty();
         $this->authHelper = new AuthHelper();
-        $adminName = $this->authHelper->getLoggedAdminName();
+        $usuarioName = $this->authHelper->getLoggedusuarioName();
         $this->smarty->assign('basehref', BASE_URL);
-        $this->smarty->assign('adminName', $adminName);
+        $this->smarty->assign('usuarioName', $usuarioName);
     }
 
     public function showLogin($error = null){

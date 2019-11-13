@@ -24,7 +24,7 @@
 			<td>{$producto->Descripcion}</td>
 			<td>{$producto->Categoria}</td>			
             <td> <small><a href="producto/{$producto->idProducto}">Ver mas</a></small> </td>
-            {if $adminName}
+            {if $admin}
             <td> <small><a href="delete/{$producto->idProducto}">Borrar</a></small> </td>
             <td> <small><a href="editarProducto/{$producto->idProducto}">Editar</a></small> </td>
             {/if}
@@ -32,10 +32,11 @@
     {/foreach}
 </table>
 
-{if $adminName}
+{if $admin}
 
       <div class="container">
-    <form action="addProducto" method="POST" class="col-md-4 offset-md-4 mt-4">
+    <form action="addProducto" method="POST" class="col-md-4 offset-md-4 mt-4" enctype="multipart/form-data">
+>
         <h1>{$titulo}</h1>
      
         <div class="form-group">
@@ -62,6 +63,11 @@
                 <option value={$categoria->idCategoria}>{$categoria->Nombre}</option>
             {/foreach}
             </select>
+        </div>
+        
+        <div class="form-group">
+            <label> IMAGEN </label>
+            <input type="file" name="img" id="imageToUpload">
         </div>
 
         <button type="submit" class="btn btn-primary">Agregar</button>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-13 00:21:15
+/* Smarty version 3.1.33, created on 2019-11-13 00:49:08
   from 'C:\xampp\htdocs\WEB-2\trabajo-practico-especial-api\trabajo-practico-ej2\templates\login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5dcb3e6b5cf9d3_20883094',
+  'unifunc' => 'content_5dcb44f4451cf7_87417695',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ff7b8849afca23ecf35d640d9c68249dc8af8bd9' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WEB-2\\trabajo-practico-especial-api\\trabajo-practico-ej2\\templates\\login.tpl',
-      1 => 1571859864,
+      1 => 1573602535,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5dcb3e6b5cf9d3_20883094 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dcb44f4451cf7_87417695 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <div class="container">
@@ -32,7 +32,7 @@ $_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cach
 
         <div class="form-group">
             <label>Usuario </label>
-            <input type="text" name="adminName" class="form-control" placeholder="Ingrese email">
+            <input type="text" name="usuarioName" class="form-control" placeholder="Ingrese email">
         </div>
 
         <div class="form-group">
