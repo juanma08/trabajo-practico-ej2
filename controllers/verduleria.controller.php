@@ -40,48 +40,6 @@ class VerduleriaController {
             else
             $this->view->showError('El producto no existe');
         }
-        
-        public function showEditCategoria($params = null){
-            $idCategoria = $params [":ID"];
-            $categoria = $this->modelCategorias->getCategoria($idCategoria);
-            if ($categoria)            
-            $this->view->showEditCategoria($categoria);
-            else
-            $this->view->showError('La categoria no existe');
-
-            
-        }
-        
-
-
-    public function editCategoria($params= null){
-                   
-         // chequea si esta logueado
-        $this->authHelper->checkLoggedIn();
-         
-            $idCategoria = $_POST ['idCategoria'];
-            $nombre = $_POST['edit'];
-             
-            if (!empty($nombre)) {
-                $this->modelCategorias->editCategoria($nombre, $idCategoria);
-                header('Location:' . CATEGORIAS);
-                }
-                else {
-                    $this->view->showError("Faltan datos.");
-                }
-                header('Location:' . CATEGORIAS);
-        }
-    public function showCategorias(){
-        $categorias = $this->modelCategorias->getCategorias();
-        $this->view->showCategorias($categorias);
-        
-    }
-    
-    public function showCategoria($params = null){
-        $idCategoria = $params [":ID"];
-        $categoria = $this->modelCategorias->getCategoria($idCategoria);
-        $this->view->showCategoria($categoria);
-    }
     
     public function addProducto(){
         
@@ -109,24 +67,8 @@ class VerduleriaController {
             
     }
     }
-}  
-
-    public function addCategoria(){
-        
-        // chequea si esta logueado
-        $this->authHelper->checkLoggedIn();
-
-        $nombre = $_POST['nombre'];
-
-        if (!empty($nombre)) {
-            
-            $this->modelCategorias->save($nombre);
-            header('Location:' . CATEGORIAS);
-        }
-        else {
-            $this->view->showError("Faltan datos.");
-        }
     }  
+ 
     public function deleteProducto($params= null){
         
         // chequea si esta logueado
@@ -136,17 +78,7 @@ class VerduleriaController {
         $this->model->delete($idProducto);
         header("Location: " . HOME);
     }
-    public function deleteCategoria($params= null){
-         
-        // chequea si esta logueado
-        $this->authHelper->checkLoggedIn();
-
-        $idCategoria = $params [':ID'];
-        $this->modelCategorias->delete($idCategoria);
-        header('Location:' . CATEGORIAS);
-
-
-    }
+    
     public function editProducto($params= null){
         
         // chequea si esta logueado
