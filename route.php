@@ -9,11 +9,15 @@
     define("LOGIN", BASE_URL . 'login');
     define("HOME", BASE_URL . 'home');
     define("CATEGORIAS", BASE_URL . 'categorias');
-    
+
     $r = new Router();
+    $r->addRoute('singin', 'GET', 'LoginController', 'showSingin');
+    $r->addRoute('newUser', 'POST', 'LoginController', 'newUser');
     $r->addRoute('login', 'GET', 'LoginController', 'showLogin');
-    $r->addRoute('verify', 'POST', 'LoginController', 'verifyUsuario');
+    $r->addRoute('verify', 'POST', 'LoginController', 'verifyUser');
     $r->addRoute('logout', 'GET', 'LoginController', 'logout');
+    $r->addRoute('forgetPassword', 'GET', 'LoginController', 'forgetPassword');
+    $r->addRoute('newPassword', 'POST', 'LoginController', 'newPassword');
     $r->addRoute('home', 'GET', 'VerduleriaController', 'showHome');
     $r->addRoute('producto/:ID', 'GET', 'VerduleriaController', 'showProducto');
     $r->addRoute('addProducto', 'POST', "VerduleriaController", 'addProducto');

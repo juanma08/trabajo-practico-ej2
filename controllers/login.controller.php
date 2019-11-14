@@ -19,7 +19,34 @@ class LoginController {
         $this->view->showLogin();
     }
 
-    public function verifyusuario(){
+    public function showSingin()
+    {
+        $this->view->showSingin();
+    }
+
+    public function newUser(){
+
+        $usuarioName = $_POST['usuarioName'];
+        $password = $_POST['password'];
+        $dni = $_POST['dni'];
+
+        if ((!empty($usuarioName)) && (!empty($password)) && (!empty($dni))) {
+            $usuario = $this->model->getByusuarioName($usuarioName);
+            if (!$usuario) {
+                $passwordCrypt = password_hash($password, PASSWORD_DEFAULT);
+                $this->model->save($usuarioName, $passwordCrypt, $dni);
+                header('Location:' . LOGIN);
+            }
+            else {
+                $this->view->showSingin("Nombre de usuario ya existente");
+            }
+        }
+        else {
+            $this->view->showSingin("Faltan datos.");
+        }
+    }
+
+    public function verifyUser(){
         $usuarioName = $_POST['usuarioName'];
         $password = $_POST['password'];
 
@@ -37,5 +64,34 @@ class LoginController {
     public function logout() {
         $this->authHelper->logout();
         header('Location: ' . HOME);
+    }
+
+    public function forgetPassword(){
+        $this->view->forgetPassword();
+    }
+
+    public function newPassword(){
+
+        $usuarioName = $_POST['usuarioName'];
+        $dni = $_POST['dni'];
+        $password = $_POST['password'];
+
+        if ((!empty($usuarioName)) && (!empty($dni)) && (!empty($password))) {
+            
+            $usuario = $this->model->getByusuarioName($usuarioName);
+            var_dump($usuario);
+            if ((!empty($usuario)) && ($dni == $usuario->DNI)){
+                $passwordCrypt = password_hash($password, PASSWORD_DEFAULT);
+                $success = $this->model->newPassword($usuario->idUsuario, $passwordCrypt);
+                if (success) {
+                
+                    header('Location: ' . LOGIN);
+                } else $this->view->forgetPassword("error");
+            } else {
+                $this->view->forgetPassword("Usuario o DNI incorrecto");
+            }
+        } else {
+            $this->view->forgetPassword("Faltan datos");
+        }
     }
 }

@@ -20,4 +20,15 @@ class LoginView {
         $this->smarty->display('templates/login.tpl');
     }
     
+    public function showSingin($error = null){
+        $this->smarty->assign('titulo', 'Registrar usuario');
+        $this->smarty->assign('error', $error);
+        $this->smarty->display('templates/singin.tpl');
+    }
+
+    public function forgetPassword($error = null){
+        $this->smarty->assign('titulo', 'Recuperar contraseña');
+        $this->smarty->assign('error', $error);
+        $this->smarty->display('templates/forgetPassword.tpl');
+    }
 }

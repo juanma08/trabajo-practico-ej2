@@ -13,9 +13,21 @@ class usuariosModel {
      */
     public function getByusuarioName($usuarioName) {
         $query = $this->db->prepare('SELECT * FROM usuarios WHERE usuarioName = ?');
-        $query->execute(array($usuarioName));
+        $query->execute([$usuarioName]);
 
         return $query->fetch(PDO::FETCH_OBJ);
     }
 
+    public function save($usuarioName, $password, $dni)
+    {   
+        $query = $this->db->prepare('INSERT INTO usuarios(usuarioName, password, dni) VALUES (?,?,?)');
+        $query->execute([$usuarioName, $password, $dni]);
+    }
+
+    public function newPassword($idUsuario, $password){
+        
+        $query = $this->db->prepare('UPDATE usuarios SET password = ? WHERE idUsuario = ?');
+        $query->execute([$password, $idUsuario]);
+        return $query->fetch(PDO::FETCH_OBJ);
+    }
 }

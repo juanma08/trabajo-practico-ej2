@@ -20,9 +20,9 @@ class CategoriasModel{
     }
     public function save($nombre){
         
-        $query = $this->db->prepare('INSERT INTO categorias(idCategoria, Nombre) VALUES (?,?)');
-        var_dump($query->errorInfo($nombre, $precio));
-        $query->execute([$idCategoria, $nombre]);
+        $query = $this->db->prepare('INSERT INTO categorias(Nombre) VALUES (?)');
+        var_dump($query->errorInfo($nombre));
+        $query->execute([$nombre]);
     }
     public function delete($idCategoria){
         $query = $this->db->prepare('DELETE FROM categorias WHERE idCategoria = ?');

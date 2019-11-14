@@ -30,8 +30,9 @@
             {/if}
             {if !$usuarioName}
             <div class="navbar-nav ml-auto">
-                <a class="nav-item nav-link" href="login">LOGIN</a>
-            </div>                 
+                <a class="nav-item " href="login">LOGIN</a>
+                <a class="nav-item " href="singin">REGISTRARSE</a>           
+            </div>
             {/if}
         
     </ul>

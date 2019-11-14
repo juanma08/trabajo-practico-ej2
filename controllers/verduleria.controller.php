@@ -10,7 +10,7 @@ class VerduleriaController {
     private $modelCategorias;
     private $authHelper;
     
-    public function __construct(){
+    public function __construct(){ 
         $this->model=new VerduleriaModel();
         $this->view=new VerduleriaView();
         $this->modelCategorias=new CategoriasModel();
@@ -78,7 +78,7 @@ class VerduleriaController {
         $this->model->delete($idProducto);
         header("Location: " . HOME);
     }
-    
+
     public function editProducto($params= null){
         
         // chequea si esta logueado

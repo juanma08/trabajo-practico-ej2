@@ -1,6 +1,6 @@
 {include 'templates/header.tpl'}
 <div class="container">
-    <form action="verify" method="POST" class="col-md-4 offset-md-4 mt-4">
+    <form action="newPassword" method="POST" class="col-md-4 offset-md-4 mt-4">
         <h1>{$titulo}</h1>
 
         <div class="form-group">
@@ -9,7 +9,12 @@
         </div>
 
         <div class="form-group">
-            <label>Password</label>
+            <label>DNI</label>
+            <input type="number" name="dni" class="form-control" placeholder="DNI">
+        </div>
+
+        <div class="form-group">
+            <label>Nueva contraseña</label>
             <input type="password" name="password" class="form-control" placeholder="Password">
         </div>
 
@@ -19,10 +24,7 @@
         </div>
         {/if}
 
-        <button type="submit" class="btn btn-primary">Ingresar</button>
-        <div class="form-group">
-            <a href="forgetPassword">olvide mi contraseña</a>
-        </div>
+        <button type="submit" class="btn btn-primary">Cambiar</button>
     </form>
 
 </div>
