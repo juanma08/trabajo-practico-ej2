@@ -104,12 +104,12 @@ class LoginController {
         $idUsuario = $params [':ID'];
         $user = $this->model->get($idUsuario);
         if ($user->admin) {
-            $this->model->adminOff($idUsuario);
+            $this->model->admin($idUsuario, 0);
             header('Location: ' . USERS);
             
         }
         else {
-            $this->model->adminOn($idUsuario);
+            $this->model->admin($idUsuario, 1);
             header('Location: ' . USERS);
 
         }

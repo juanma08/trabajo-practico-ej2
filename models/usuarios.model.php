@@ -42,4 +42,9 @@ class usuariosModel {
         $query->execute();
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
+    public function adminOn($idUsuario, $admin)
+    {
+        $query = $this->db->prepare('UPDATE usuarios SET admin = ? WHERE idUsuario = ?');
+        $query->execute([$admin, $idUsuario]);
+    }
 }

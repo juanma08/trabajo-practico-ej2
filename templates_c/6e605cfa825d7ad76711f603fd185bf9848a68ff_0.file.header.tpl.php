@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-10 01:21:20
+/* Smarty version 3.1.33, created on 2019-11-18 20:54:03
   from 'C:\xampp\htdocs\WEB-2\trabajo-practico-ej2\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d9e6b70a43f66_49935953',
+  'unifunc' => 'content_5dd2f6dbb17df3_13399526',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6e605cfa825d7ad76711f603fd185bf9848a68ff' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WEB-2\\trabajo-practico-ej2\\templates\\header.tpl',
-      1 => 1570663277,
+      1 => 1574105836,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d9e6b70a43f66_49935953 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dd2f6dbb17df3_13399526 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,7 +40,7 @@ function content_5d9e6b70a43f66_49935953 (Smarty_Internal_Template $_smarty_tpl)
     <?php echo '<script'; ?>
  src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"><?php echo '</script'; ?>
 >
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title><?php echo $_smarty_tpl->tpl_vars['titulo']->value;?>
 </title>
 </head>
@@ -50,30 +50,28 @@ function content_5d9e6b70a43f66_49935953 (Smarty_Internal_Template $_smarty_tpl)
     <li class="nav-item">
         <a class="nav-link active" href="home">Locasso</a>
     </li>
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Categorias</a>
-        <div class="dropdown-menu">
-        <a class="dropdown-item" href="categoriaFruta">Frutas</a>
-        <a class="dropdown-item" href="categoriaVerdura">Verduras</a>
-        
+    <li>
+        <a class="nav-link" href="categorias">Categorias</a>
     </li>
-
-
-
-            </li>
-            <?php if ($_smarty_tpl->tpl_vars['adminName']->value) {?>
+    <?php if ($_smarty_tpl->tpl_vars['admin']->value) {?>
+     <li>
+        <a class="nav-link" href="users">Usuarios</a>
+    </li>
+    <?php }?>
+            <?php if ($_smarty_tpl->tpl_vars['usuarioName']->value) {?>
                 <div class="navbar-nav ml-auto">
-                    <span class="navbar-text"><?php echo $_smarty_tpl->tpl_vars['adminName']->value;?>
+                    <span class="navbar-text"><?php echo $_smarty_tpl->tpl_vars['usuarioName']->value;?>
 </span>
                     <a class="nav-item nav-link" href="logout">LOGOUT</a>
                 </div>
             <?php }?>
-            <?php if (!$_smarty_tpl->tpl_vars['adminName']->value) {?>
+            <?php if (!$_smarty_tpl->tpl_vars['usuarioName']->value) {?>
             <div class="navbar-nav ml-auto">
-                <a class="nav-item nav-link" href="login">LOGIN</a>
-            </div>                 
+                <a class="nav-item " href="login">LOGIN</a>
+                <a class="nav-item " href="singin">REGISTRARSE</a>           
+            </div>
             <?php }?>
-        </div>
+        
     </ul>
-    </nav><?php }
+<?php }
 }
