@@ -115,4 +115,12 @@ class LoginController {
         }
 
     }
+    public function deleteUser($params= null){
+        $this->authHelper->checkAdmin(); 
+        $idUsuario = $params [':ID'];
+        $user = $this->model->delete($idUsuario);
+        header("Location: " . USERS);
+
+    }
+
 }

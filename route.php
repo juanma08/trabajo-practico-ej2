@@ -33,7 +33,9 @@
     $r->addRoute('deleteCategoria/:ID', 'GET', 'categoriasController', 'deleteCategoria');
     $r->addRoute('editCategoria', 'POST', "categoriasController", 'editCategoria');
     $r->addRoute('users', 'GET', "loginController", 'showUsers');
-    $r->addRoute('permiso/:ID', 'POST', "loginController", 'permiso');
+    $r->addRoute('permiso/:ID', 'GET', "loginController", 'permiso');
+    $r->addRoute('deleteUsuario/:ID', 'GET', 'loginController', 'deleteUser');
+
 
 
     

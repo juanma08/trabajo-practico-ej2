@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-18 20:04:27
+/* Smarty version 3.1.33, created on 2019-11-18 22:34:25
   from 'C:\xampp\htdocs\WEB-2\trabajo-practico-especial-api\trabajo-practico-ej2\templates\users.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5dd2eb3bb17257_96433849',
+  'unifunc' => 'content_5dd30e61ed40f8_62350634',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6fb8baf2b67e1dac24071768fc225fa15bcda4f0' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WEB-2\\trabajo-practico-especial-api\\trabajo-practico-ej2\\templates\\users.tpl',
-      1 => 1574103595,
+      1 => 1574112865,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5dd2eb3bb17257_96433849 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dd30e61ed40f8_62350634 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <table>
@@ -44,9 +44,19 @@ foreach ($_from as $_smarty_tpl->tpl_vars['user']->value) {
 			<td><?php echo $_smarty_tpl->tpl_vars['user']->value->usuarioName;?>
 </td>
 			<td><?php echo $_smarty_tpl->tpl_vars['user']->value->admin;?>
-</td>			
+</td>	
+            <?php if ($_smarty_tpl->tpl_vars['user']->value->admin) {?>
             <td> <small><a href="permiso/<?php echo $_smarty_tpl->tpl_vars['user']->value->idUsuario;?>
-">Dar permiso de admin</a></small> </td>    
+">Quitar permiso de admin</a></small> </td>    
+                
+            <?php } else { ?>
+            <td> <small><a href="permiso/<?php echo $_smarty_tpl->tpl_vars['user']->value->idUsuario;?>
+">Dar permiso de admin</a></small> </td>  
+            <?php }?>
+            <td> <small><a href="deleteUsuario/<?php echo $_smarty_tpl->tpl_vars['user']->value->idUsuario;?>
+">Eliminar usuario</a></small> </td>  	
+                	
+                     
         </tr>
     <?php
 }
