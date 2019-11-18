@@ -22,6 +22,11 @@
     <li>
         <a class="nav-link" href="categorias">Categorias</a>
     </li>
+    {if $admin}
+     <li>
+        <a class="nav-link" href="users">Usuarios</a>
+    </li>
+    {/if}
             {if $usuarioName}
                 <div class="navbar-nav ml-auto">
                     <span class="navbar-text">{$usuarioName}</span>

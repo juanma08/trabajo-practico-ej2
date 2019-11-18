@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-14 02:02:09
+/* Smarty version 3.1.33, created on 2019-11-18 20:03:03
   from 'C:\xampp\htdocs\WEB-2\trabajo-practico-especial-api\trabajo-practico-ej2\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5dcca791b32547_95286792',
+  'unifunc' => 'content_5dd2eae7bdf6f4_04959018',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4426839790f3b4953c43104bfa89ee0c51722561' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WEB-2\\trabajo-practico-especial-api\\trabajo-practico-ej2\\templates\\header.tpl',
-      1 => 1573693326,
+      1 => 1574103781,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5dcca791b32547_95286792 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dd2eae7bdf6f4_04959018 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,6 +53,11 @@ function content_5dcca791b32547_95286792 (Smarty_Internal_Template $_smarty_tpl)
     <li>
         <a class="nav-link" href="categorias">Categorias</a>
     </li>
+    <?php if ($_smarty_tpl->tpl_vars['admin']->value) {?>
+     <li>
+        <a class="nav-link" href="users">Usuarios</a>
+    </li>
+    <?php }?>
             <?php if ($_smarty_tpl->tpl_vars['usuarioName']->value) {?>
                 <div class="navbar-nav ml-auto">
                     <span class="navbar-text"><?php echo $_smarty_tpl->tpl_vars['usuarioName']->value;?>

@@ -8,6 +8,13 @@ class usuariosModel {
         $this->db = new PDO('mysql:host=localhost;dbname=db_verduleria;charset=utf8', 'root', '');
     }
 
+    public function get($idUsuario) {
+        $query = $this->db->prepare('SELECT * FROM usuarios WHERE idUsuario = ?');
+        $query->execute([$idUsuario]);
+
+        return $query->fetch(PDO::FETCH_OBJ);
+    }
+
     /**
      * Retorna un usuario según el username pasado.
      */
@@ -29,5 +36,10 @@ class usuariosModel {
         $query = $this->db->prepare('UPDATE usuarios SET password = ? WHERE idUsuario = ?');
         $query->execute([$password, $idUsuario]);
         return $query->fetch(PDO::FETCH_OBJ);
+    }
+    public function getUsers(){
+        $query = $this->db->prepare('SELECT usuarioName, admin, idUsuario  FROM usuarios');
+        $query->execute();
+        return $query->fetchAll(PDO::FETCH_OBJ);
     }
 }

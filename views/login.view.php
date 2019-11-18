@@ -10,8 +10,12 @@ class LoginView {
         $this->smarty = new Smarty();
         $this->authHelper = new AuthHelper();
         $usuarioName = $this->authHelper->getLoggedusuarioName();
+        $admin = $this->authHelper->checkAdmin();
+
         $this->smarty->assign('basehref', BASE_URL);
         $this->smarty->assign('usuarioName', $usuarioName);
+        $this->smarty->assign('admin', $admin);
+
     }
 
     public function showLogin($error = null){
@@ -30,5 +34,10 @@ class LoginView {
         $this->smarty->assign('titulo', 'Recuperar contraseña');
         $this->smarty->assign('error', $error);
         $this->smarty->display('templates/forgetPassword.tpl');
+    }
+    public function showUsers($users){
+        $this->smarty->assign('titulo', 'Usuarios y permisos');
+        $this->smarty->assign('users',$users);
+        $this->smarty->display('templates/users.tpl');
     }
 }

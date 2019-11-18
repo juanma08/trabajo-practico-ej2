@@ -9,6 +9,8 @@
     define("LOGIN", BASE_URL . 'login');
     define("HOME", BASE_URL . 'home');
     define("CATEGORIAS", BASE_URL . 'categorias');
+    define("USERS", BASE_URL . 'users');
+
 
     $r = new Router();
     $r->addRoute('singin', 'GET', 'LoginController', 'showSingin');
@@ -30,6 +32,8 @@
     $r->addRoute('editarCategoria/:ID', 'GET', "categoriasController", 'showEditCategoria');
     $r->addRoute('deleteCategoria/:ID', 'GET', 'categoriasController', 'deleteCategoria');
     $r->addRoute('editCategoria', 'POST', "categoriasController", 'editCategoria');
+    $r->addRoute('users', 'GET', "loginController", 'showUsers');
+    $r->addRoute('permiso/:ID', 'POST', "loginController", 'permiso');
 
 
     

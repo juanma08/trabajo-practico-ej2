@@ -94,4 +94,25 @@ class LoginController {
             $this->view->forgetPassword("Faltan datos");
         }
     }
+    public function showUsers(){
+        $this->authHelper->checkAdmin(); 
+        $users = $this->model->getUsers();
+        $this->view->showUsers($users);
+    }
+    public function permiso($params= null){
+        $this->authHelper->checkAdmin(); 
+        $idUsuario = $params [':ID'];
+        $user = $this->model->get($idUsuario);
+        if ($user->admin) {
+            $this->model->adminOff($idUsuario);
+            header('Location: ' . USERS);
+            
+        }
+        else {
+            $this->model->adminOn($idUsuario);
+            header('Location: ' . USERS);
+
+        }
+
+    }
 }
