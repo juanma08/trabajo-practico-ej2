@@ -1,5 +1,6 @@
 <?php
     require_once('Router.php');
+    require_once('./api/comentarios.api.controller.php');
     require_once('./api/verduleria.api.controller.php');
     require_once('./api/categorias.api.controller.php');
     
@@ -18,6 +19,8 @@
     $r->addRoute('categorias/:ID', 'DELETE', 'categoriasApiController', 'deleteCategoria');
     $r->addRoute('categorias', 'POST', 'categoriasApiController', 'addCategoria');
     $r->addRoute('categorias/:ID', 'PUT', 'categoriasApiController', 'editCategoria');
-    
+    $r->addRoute('comentarios/:ID', 'GET', 'comentariosApiController', 'getComentarios');
+    $r->addRoute('comentarios', 'POST', 'comentariosApiController', 'addComentarios');
+
     $r->route($_GET['resource'], $_SERVER['REQUEST_METHOD']);
 
