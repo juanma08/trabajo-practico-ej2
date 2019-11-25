@@ -21,6 +21,7 @@
     $r->addRoute('categorias/:ID', 'PUT', 'categoriasApiController', 'editCategoria');
     $r->addRoute('comentarios/:ID', 'GET', 'comentariosApiController', 'getComentarios');
     $r->addRoute('comentarios', 'POST', 'comentariosApiController', 'addComentarios');
-
+    $r->addRoute('comentarios/:ID', 'DELETE', 'comentariosApiController', 'deleteComentario');
+    
     $r->route($_GET['resource'], $_SERVER['REQUEST_METHOD']);
 

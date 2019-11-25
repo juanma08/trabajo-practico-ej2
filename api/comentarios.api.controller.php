@@ -27,12 +27,21 @@ class comentariosApiController{
         $idComentario=$this->model->save($data->puntaje, $data->fk_id_usuario, $data->comentario, $data->fk_id_producto);
         if ($idComentario){
             $comentario = $this->model->getComentario($idComentario);
-            
             $this->view->response($comentario, 200);
         }
         else
         $this->view->response("ERRORRRRRRRR", 404);
-  
     }
- 
+
+    public function deleteComentario($params = null){
+        $idComentario = $params [":ID"];
+        $comentario = $this->model->getComentario($idComentario);
+        if($comentario){
+            $this->model->delete($idComentario);
+            $this->view->response("Borrado exitoso", 200);
+        }
+        else{
+            $this->view->response("El comentario no existe", 404);
+        }
+    }
 }

@@ -35,7 +35,9 @@ class LoginController {
             if (!$usuario) {
                 $passwordCrypt = password_hash($password, PASSWORD_DEFAULT);
                 $this->model->save($usuarioName, $passwordCrypt, $dni);
-                header('Location:' . LOGIN);
+                $newUsuario = $this->model->getByusuarioName($usuarioName);
+                $this->authHelper->login($newUsuario);
+                header('Location: home');
             }
             else {
                 $this->view->showSingin("Nombre de usuario ya existente");
