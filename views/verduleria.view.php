@@ -10,7 +10,7 @@ class VerduleriaView {
         $this->authHelper = new AuthHelper();
         $idUsuario = $this->authHelper->getLoggedUsuarioId();
         $usuarioName = $this->authHelper->getLoggedUsuarioName();
-        $admin = $this->authHelper->checkAdmin();
+        $admin = $this->authHelper->checkLoggedAdmin();
         $this->smarty->assign('idUsuario', $idUsuario);
         $this->smarty->assign('usuarioName', $usuarioName);
         $this->smarty->assign('admin', $admin);

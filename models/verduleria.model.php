@@ -37,6 +37,12 @@ class VerduleriaModel{
         $query = $this->db->prepare('DELETE FROM productos WHERE idProducto = ?');
         $query->execute([$idProducto]);   
     }
+
+    public function deleteImg($idProducto){
+        $query = $this->db->prepare('UPDATE productos SET imagen = null WHERE idProducto = ?');
+        $query->execute([$idProducto]);   
+    }
+
     public function editProducto($nombre, $precio, $descripcion, $categoria, $idProducto){
         
         $query = $this->db->prepare('UPDATE productos SET Nombre = ?, Precio = ?, Descripcion = ?, idCategoria = ? WHERE idProducto = ? ');

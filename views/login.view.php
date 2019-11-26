@@ -10,7 +10,7 @@ class LoginView {
         $this->smarty = new Smarty();
         $this->authHelper = new AuthHelper();
         $usuarioName = $this->authHelper->getLoggedusuarioName();
-        $admin = $this->authHelper->checkAdmin();
+        $admin = $this->authHelper->checkLoggedAdmin();
 
         $this->smarty->assign('basehref', BASE_URL);
         $this->smarty->assign('usuarioName', $usuarioName);

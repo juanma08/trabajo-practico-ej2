@@ -10,6 +10,7 @@
     define("HOME", BASE_URL . 'home');
     define("CATEGORIAS", BASE_URL . 'categorias');
     define("USERS", BASE_URL . 'users');
+    
 
 
     $r = new Router();
@@ -26,6 +27,7 @@
     $r->addRoute('editarProducto/:ID', 'GET', "VerduleriaController", 'ShowEditProducto');  
     $r->addRoute('delete/:ID', 'GET', 'VerduleriaController', 'deleteProducto');
     $r->addRoute('editProducto', 'POST', "VerduleriaController", 'editProducto');
+    $r->addRoute('deleteImg/:ID', 'GET', "VerduleriaController", 'deleteImagen');
     $r->addRoute('categorias', 'GET', 'categoriasController', 'showCategorias');
     $r->addRoute('categoria/:ID', 'GET', 'categoriasController', 'showCategoria');
     $r->addRoute('addCategoria', 'POST', "categoriasController", 'addCategoria');

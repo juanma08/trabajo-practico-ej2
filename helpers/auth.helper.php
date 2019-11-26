@@ -28,7 +28,14 @@ class AuthHelper {
     }
 
     public function checkAdmin() {
-        if (isset($_SESSION['ADMIN'])) {
+        if (!isset($_SESSION['ADMIN'])) {
+            header('Location: ' . HOME);
+            die();
+        }
+    }
+
+    public function checkLoggedAdmin() {
+        if (isset($_SESSION['ADMIN'])){           
             return $_SESSION['ADMIN'];
         }
         else return null;

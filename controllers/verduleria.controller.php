@@ -71,18 +71,28 @@ class VerduleriaController {
  
     public function deleteProducto($params= null){
         
-        // chequea si esta logueado
-        $this->authHelper->checkLoggedIn();
+        // chequea si es admin
+        $this->authHelper->checkAdmin();
 
         $idProducto = $params [':ID'];
         $this->model->delete($idProducto);
         header("Location: " . HOME);
     }
 
+    public function deleteImagen($params= null){
+        
+        // chequea si es admin
+        $this->authHelper->checkAdmin();
+
+        $idProducto = $params [':ID'];
+        $this->model->deleteImg($idProducto);
+        header("Location: " . HOME);
+    }
+
     public function editProducto($params= null){
         
-        // chequea si esta logueado
-        $this->authHelper->checkLoggedIn(); 
+        // chequea si es admin
+        $this->authHelper->checkAdmin(); 
 
         $nombre = $_POST['nombre'];
         $precio = $_POST['precio'];
