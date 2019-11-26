@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-18 22:34:25
-  from 'C:\xampp\htdocs\WEB-2\trabajo-practico-especial-api\trabajo-practico-ej2\templates\users.tpl' */
+/* Smarty version 3.1.33, created on 2019-11-26 20:11:51
+  from 'C:\xampp\htdocs\WEB-2\trabajo-practico-ej2\templates\users.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5dd30e61ed40f8_62350634',
+  'unifunc' => 'content_5ddd78f75292f8_62410054',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '6fb8baf2b67e1dac24071768fc225fa15bcda4f0' => 
+    'a8944982df46bdda0d00835d7ec7757d2020d0a2' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\WEB-2\\trabajo-practico-especial-api\\trabajo-practico-ej2\\templates\\users.tpl',
-      1 => 1574112865,
+      0 => 'C:\\xampp\\htdocs\\WEB-2\\trabajo-practico-ej2\\templates\\users.tpl',
+      1 => 1574113235,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5dd30e61ed40f8_62350634 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ddd78f75292f8_62410054 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <table>

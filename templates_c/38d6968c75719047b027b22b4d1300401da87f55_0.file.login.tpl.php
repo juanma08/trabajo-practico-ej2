@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-04 19:17:18
+/* Smarty version 3.1.33, created on 2019-11-26 19:44:51
   from 'C:\xampp\htdocs\WEB-2\trabajo-practico-ej2\templates\login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d977e9e1a7809_51548746',
+  'unifunc' => 'content_5ddd72a3c06f42_23719921',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '38d6968c75719047b027b22b4d1300401da87f55' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WEB-2\\trabajo-practico-ej2\\templates\\login.tpl',
-      1 => 1570209435,
+      1 => 1574102493,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5d977e9e1a7809_51548746 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ddd72a3c06f42_23719921 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <div class="container">
@@ -32,7 +32,7 @@ $_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cach
 
         <div class="form-group">
             <label>Usuario </label>
-            <input type="text" name="adminName" class="form-control" placeholder="Ingrese email">
+            <input type="text" name="usuarioName" class="form-control" placeholder="Usuario">
         </div>
 
         <div class="form-group">
@@ -48,6 +48,9 @@ $_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cach
         <?php }?>
 
         <button type="submit" class="btn btn-primary">Ingresar</button>
+        <div class="form-group">
+            <a href="forgetPassword">olvide mi contraseña</a>
+        </div>
     </form>
 
 </div>

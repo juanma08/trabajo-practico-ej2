@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-18 20:54:03
+/* Smarty version 3.1.33, created on 2019-11-26 22:02:37
   from 'C:\xampp\htdocs\WEB-2\trabajo-practico-ej2\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5dd2f6dbb17df3_13399526',
+  'unifunc' => 'content_5ddd92ede087e1_56288588',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6e605cfa825d7ad76711f603fd185bf9848a68ff' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WEB-2\\trabajo-practico-ej2\\templates\\header.tpl',
-      1 => 1574105836,
+      1 => 1574801489,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5dd2f6dbb17df3_13399526 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ddd92ede087e1_56288588 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,6 +32,12 @@ function content_5dd2f6dbb17df3_13399526 (Smarty_Internal_Template $_smarty_tpl)
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <?php echo '<script'; ?>
+ src="js/main.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
  src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"><?php echo '</script'; ?>
 >
     <?php echo '<script'; ?>
@@ -41,6 +47,7 @@ function content_5dd2f6dbb17df3_13399526 (Smarty_Internal_Template $_smarty_tpl)
  src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"><?php echo '</script'; ?>
 >
     <link rel="stylesheet" href="./css/style.css">
+    
     <title><?php echo $_smarty_tpl->tpl_vars['titulo']->value;?>
 </title>
 </head>

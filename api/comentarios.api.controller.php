@@ -22,7 +22,7 @@ class comentariosApiController{
         $comentarios = $this->model->get($idProducto);
         $this->view->response($comentarios, 200);
     }
-    public function addComentarios(){
+    public function addComentario(){
         $data=$this->getData();
         $idComentario=$this->model->save($data->puntaje, $data->fk_id_usuario, $data->comentario, $data->fk_id_producto);
         if ($idComentario){
@@ -30,7 +30,7 @@ class comentariosApiController{
             $this->view->response($comentario, 200);
         }
         else
-        $this->view->response("ERRORRRRRRRR", 404);
+        $this->view->response("El comentario no ha sido agregado", 404);
     }
 
     public function deleteComentario($params = null){
