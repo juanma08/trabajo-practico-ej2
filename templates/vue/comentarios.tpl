@@ -28,7 +28,9 @@
     {/literal}
     <input type="hidden" id="idProducto" value={$producto->idProducto}>
     <input type="hidden" id="idUsuario" value={$idUsuario}>
+    {if $usuarioName}
     {literal}
+    
     <label> Escribir comentario</label>
     <textarea name="textarea" id="comentario"></textarea>
     <select class="custom-select" id="puntaje">
@@ -40,6 +42,8 @@
         <option value="5">5</option>
     </select>
     <button type="submit" id="btnAgregarComentario"  v-on:click="add">Agregar Comentario</button>
-    
-</section>
+    {/literal}
+    {/if}
+    {literal}
+    </section>
 {/literal}

@@ -43,7 +43,7 @@ class VerduleriaController {
     
     public function addProducto(){
         
-        if ($this->authHelper->checkAdmin()) {
+        if ($this->authHelper->checkLoggedAdmin()) {
 
         $nombre = $_POST['nombre'];
         $precio = $_POST['precio'];
