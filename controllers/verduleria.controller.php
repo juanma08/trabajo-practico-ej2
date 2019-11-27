@@ -43,19 +43,17 @@ class VerduleriaController {
     
     public function addProducto(){
         
+        
         if ($this->authHelper->checkLoggedAdmin()) {
-
         $nombre = $_POST['nombre'];
         $precio = $_POST['precio'];
         $descripcion = $_POST['descripcion'];
         $idCategoria = $_POST['categoria'];
-        
         if ((!empty($nombre )) && (!empty($precio)) && (!empty($descripcion)) && (!empty($idCategoria))) {
             if($_FILES['img']['type'] == "image/jpg" || $_FILES['img']['type'] == "image/jpeg" 
             || $_FILES['img']['type'] == "image/png" ){
                 $this->model->save($nombre, $precio, $descripcion, $idCategoria, $_FILES['img']);
                 header('Location:' . HOME);
-
             }
             else {
                 $this->model->save($nombre, $precio, $descripcion, $idCategoria);

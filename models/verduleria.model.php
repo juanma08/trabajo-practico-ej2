@@ -19,14 +19,21 @@ class VerduleriaModel{
     }
     public function save($nombre, $precio, $descripcion, $idCategoria, $img = null){
         $pathImg = null;
-        if ($img)
+        if ($img){
+
             $pathImg = $this->uploadImage($img);
-
-
-        $query = $this->db->prepare('INSERT INTO productos(Nombre, Precio, Descripcion, idCategoria, imagen) VALUES (?,?,?,?,?)');        
-        $query->execute([$nombre, $precio, $descripcion, $idCategoria, $pathImg]);
-        $lastInsertId = $this->db->lastInsertId();
-        return $this->get($lastInsertId);
+                
+            $query = $this->db->prepare('INSERT INTO productos(Nombre, Precio, Descripcion, idCategoria, imagen) VALUES (?,?,?,?,?)');        
+            $query->execute([$nombre, $precio, $descripcion, $idCategoria, $pathImg]);
+            $lastInsertId = $this->db->lastInsertId();
+            return $this->get($lastInsertId);
+        }
+        else {
+            $query = $this->db->prepare('INSERT INTO productos(Nombre, Precio, Descripcion, idCategoria) VALUES (?,?,?,?)');        
+            $query->execute([$nombre, $precio, $descripcion, $idCategoria]);
+            $lastInsertId = $this->db->lastInsertId();
+            return $this->get($lastInsertId);
+        }
     }
     private function uploadImage($img){
         $target = "img/producto/" . uniqid() . "." . strtolower(pathinfo($img['name'], PATHINFO_EXTENSION));  

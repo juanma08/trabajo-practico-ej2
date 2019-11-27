@@ -61,10 +61,4 @@ class VerduleriaView {
         echo "<h1>ERROR!</h1>";
     }
 
-    
-
-
-
-
-
-    }
+}

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-27 00:00:12
+/* Smarty version 3.1.33, created on 2019-11-27 19:39:30
   from 'C:\xampp\htdocs\WEB-2\trabajo-practico-ej2\templates\vue\comentarios.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5dddae7c4884b2_18398596',
+  'unifunc' => 'content_5ddec2e2cfbf50_30673672',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '22a6641b3b9d6fb55a1dca48403203bd3bcd6e33' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WEB-2\\trabajo-practico-ej2\\templates\\vue\\comentarios.tpl',
-      1 => 1574809209,
+      1 => 1574878830,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5dddae7c4884b2_18398596 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ddec2e2cfbf50_30673672 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
     <section id=vue-comentarios>
 
@@ -53,6 +53,8 @@ function content_5dddae7c4884b2_18398596 (Smarty_Internal_Template $_smarty_tpl)
 >
     <input type="hidden" id="idUsuario" value=<?php echo $_smarty_tpl->tpl_vars['idUsuario']->value;?>
 >
+    <?php if ($_smarty_tpl->tpl_vars['usuarioName']->value) {?>
+    
     
     <label> Escribir comentario</label>
     <textarea name="textarea" id="comentario"></textarea>
@@ -66,6 +68,8 @@ function content_5dddae7c4884b2_18398596 (Smarty_Internal_Template $_smarty_tpl)
     </select>
     <button type="submit" id="btnAgregarComentario"  v-on:click="add">Agregar Comentario</button>
     
-</section>
+    <?php }?>
+    
+    </section>
 <?php }
 }
